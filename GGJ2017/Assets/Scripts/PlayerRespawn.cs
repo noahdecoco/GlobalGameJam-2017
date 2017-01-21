@@ -12,8 +12,6 @@ public class PlayerRespawn : MonoBehaviour
     
     // Private vars.
     private float respawnTime = 5.0f;
-
-	private bool isDead = false;
     
     // Unity callbacks.
 	void OnCollisionEnter(Collision other)
@@ -21,8 +19,6 @@ public class PlayerRespawn : MonoBehaviour
 		if (other.gameObject.tag == "Death")
         {
             Debug.Log(gameObject.name + " just fell to their death.");
-
-			isDead = true;
 
             gameObject.SetActive(false);
 
@@ -34,8 +30,6 @@ public class PlayerRespawn : MonoBehaviour
     private void Respawn()
     {
         gameObject.SetActive(true);
-
-        isDead = false;
 
         // The magic number here is a percentage of the vector between the 
         // origin and the crystal spawn position. This places the player 
