@@ -10,8 +10,6 @@ public class GameManager : MonoBehaviour
 
     public GameObject LevelObject;
 
-    public Vector3 PlayerSpawnOffset = new Vector3(2f, 0f, 2f);
-
     private SpawnPoints spawnPoints;
     
 	// Unity callbacks.
@@ -44,8 +42,6 @@ public class GameManager : MonoBehaviour
 
             newCrystal.transform.parent = spawnPointsToUse[i].transform;
 
-            newPlayer.transform.position = spawnPointsToUse[i].transform.position + PlayerSpawnOffset;
-
             // Set indices.
             newCrystal.GetComponent<CrystalInfo>().PlayerIndex = i;
 
@@ -57,8 +53,8 @@ public class GameManager : MonoBehaviour
 
             Debug.Assert(playerIndex == i, "playerIndex is " + playerIndex + ", expected " + i);
 
-            // Set respawn point.
-            newPlayer.GetComponent<PlayerRespawn>().respawnPoint = spawnPointsToUse[i].transform.position + PlayerSpawnOffset;
+            // Set spawn point and spawn player.
+            newPlayer.GetComponent<PlayerRespawn>().respawnPoint = spawnPointsToUse[i];
         }
     }
 
