@@ -54,23 +54,37 @@ public class PlayerMovement : MonoBehaviour
 	}
 
 	void HandleInput()
-	{
-        Vector3 direction;
+    {
+        Vector3 direction = Vector3.zero;
 
         if (useKeyboardControls)
         {
-            direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
-        }
-        // Gamepad controls.
-        else
-        {
-            if (playerIndexSet && !prevState.IsConnected)
+            // Drop the gamepad index.
+            if (playerIndexSet)
             {
+                Debug.Log(string.Format("{0} dropping gamepad {1}", gameObject.name, playerIndex));
+
                 ClaimedPlayerIndices[(int)playerIndex] = false;
 
                 playerIndexSet = false;
             }
 
+            direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
+        }
+        // Gamepad controls.
+        else
+        {
+            // If gamepad disconnects, drop the index.
+            if (playerIndexSet && !prevState.IsConnected)
+            {
+                Debug.Log(string.Format("{0} dropping gamepad {1} due to disconnection", gameObject.name, playerIndex));
+
+                ClaimedPlayerIndices[(int)playerIndex] = false;
+
+                playerIndexSet = false;
+            }
+
+            // If no index is set, claim one.
             if (!playerIndexSet)
             {
                 for (int i = 0; i < 4; ++i)
@@ -82,19 +96,18 @@ public class PlayerMovement : MonoBehaviour
                     // Make sure controller is connected and not claimed yet.
                     if (testState.IsConnected && ClaimedPlayerIndices[i] == false)
                     {
-                        Debug.Log(ClaimedPlayerIndices[i]);
-                        Debug.Log(string.Format("GamePad found {0}", testPlayerIndex));
+                        Debug.Log(string.Format("{0} using gamepad {1}", gameObject.name, testPlayerIndex));
 
                         playerIndex = testPlayerIndex;
 
                         playerIndexSet = true;
 
                         ClaimedPlayerIndices[i] = true;
-                        Debug.Log(ClaimedPlayerIndices[i]);
                     }
                 }
             }
 
+            // If index is set, use gamepad!
             if (playerIndexSet)
             {
                 prevState = state;
@@ -105,6 +118,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
+        // Perform movement.
         transform.Translate(direction * moveSpeed * Time.deltaTime, Space.World);
     }
 
