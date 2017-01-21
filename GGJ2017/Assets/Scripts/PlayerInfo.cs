@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerInfo : MonoBehaviour
 {
     // Static (global) vars. Don't use globals, except for the GLOBAL GAME JAM!!!
-    public static bool[] ClaimedPlayerIndices = new bool[] { false, false, false, false };
+    public static bool[] __global_ClaimedPlayerIndices = new bool[] { false, false, false, false };
 
     // Public vars.
     public int PlayerIndex = -1;
@@ -19,13 +19,13 @@ public class PlayerInfo : MonoBehaviour
         {
             for (int i = 0; i < 4; ++i)
             {
-                if (ClaimedPlayerIndices[i] == false)
+                if (__global_ClaimedPlayerIndices[i] == false)
                 {
                     Debug.Log(gameObject.name + " with index " + i.ToString() + " has joined the game.");
 
                     PlayerIndex = i;
 
-                    ClaimedPlayerIndices[i] = true;
+                    __global_ClaimedPlayerIndices[i] = true;
 
                     SetCharacterModel();
 

@@ -4,6 +4,18 @@ using UnityEngine;
 
 public class CrystalView : MonoBehaviour
 {
+    // Static vars.
+    private static Color[] crystalColors = new Color[]
+    {
+        new Color(0f, 0f, 1f, 1f), // Blue
+        new Color(0f, 1f, 0f, 1f), // Green
+        new Color(1f, 0f, 0f, 1f), // Red
+        new Color(1f, 1f, 0f, 1f)  // Yellow
+    };
+
+    // Public vars.
+    public int ColorIndex = 0; // 0 = Blue, 1 = Green, 2 = Red, 3 = Yellow
+
     // Private vars.
     private Battery battery;
 
@@ -11,11 +23,22 @@ public class CrystalView : MonoBehaviour
 
 	void Start ()
     {
+        // Listen for battery events.
         battery = GetComponent<Battery>();
         
         battery.ChargeValueChangedEvent += OnChargeValueChanged;
 
-        crystalMaterial = transform.FindChild("chrystal").GetComponent<Material>();
+        // Get access to the crystal material.
+        Transform crystalTransform = transform.Find("Offsets").Find("chrystal");
+
+        Debug.Assert(crystalTransform != null);
+
+        crystalMaterial = crystalTransform.GetComponent<Renderer>().material;
+
+        Debug.Assert(crystalMaterial != null);
+
+        // Set color based on color index.
+        crystalMaterial.color = crystalColors[ColorIndex];
     }
 
     void OnChargeValueChanged(object sender, float chargeValue)
