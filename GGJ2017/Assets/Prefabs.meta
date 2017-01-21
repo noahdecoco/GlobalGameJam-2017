@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:GGJ2017/Assets/Prefabs.meta
 guid: c39c1afc1ba9c4448a6d6abebadde4cb
 folderAsset: yes
 timeCreated: 1484951792
+=======
+guid: 71f6633794853e74085cf38ab1216114
+folderAsset: yes
+timeCreated: 1484950113
+>>>>>>> 9d588e4c78f2fd32d5913d6e158d0a20625023b1:GGJ2017/Assets/Prefabs.meta
 licenseType: Free
 DefaultImporter:
   userData: 
