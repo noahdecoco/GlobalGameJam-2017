@@ -94,7 +94,8 @@ public class PlayerMovement : MonoBehaviour
                     GamePadState testState = GamePad.GetState(testPlayerIndex);
 
                     // Make sure controller is connected and not claimed yet.
-                    if (testState.IsConnected && ClaimedPlayerIndices[i] == false)
+                    if (testState.IsConnected 
+                        && ClaimedPlayerIndices[i] == false)
                     {
                         Debug.Log(string.Format("{0} using gamepad {1}", gameObject.name, testPlayerIndex));
 
@@ -103,6 +104,8 @@ public class PlayerMovement : MonoBehaviour
                         playerIndexSet = true;
 
                         ClaimedPlayerIndices[i] = true;
+
+                        break;
                     }
                 }
             }
