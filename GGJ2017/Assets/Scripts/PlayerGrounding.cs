@@ -6,8 +6,7 @@ public class PlayerGrounding : MonoBehaviour {
 	private void OnCollisionEnter(Collision other) {
 
 		if(other.gameObject.tag == "MovingPlatform") {
-//			print("Enter");
-//			transform.parent = other.transform;
+			transform.parent = other.transform;
 		}
  	}
 
@@ -15,7 +14,7 @@ public class PlayerGrounding : MonoBehaviour {
 		if(other.gameObject.tag == "MovingPlatform") {
 //			print("Leave");
 			if(transform.parent == other.transform){
-//				transform.parent = null;
+				transform.parent = null;
 			}
 		}
  	}

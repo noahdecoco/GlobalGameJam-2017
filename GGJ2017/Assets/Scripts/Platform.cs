@@ -66,7 +66,5 @@ public class Platform : MonoBehaviour {
 			}
 			_isDropped = false;
 		}
-
-
 	}
 }
