@@ -11,8 +11,6 @@ public class Rotator : MonoBehaviour {
 
 	private float _timeToChangeDirection;
 
-	static float t = 0.0f;
-
 	float lerpTime = 3.0f;
     float currentLerpTime;
 
