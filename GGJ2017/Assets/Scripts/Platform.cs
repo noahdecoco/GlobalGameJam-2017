@@ -12,9 +12,17 @@ public class Platform : MonoBehaviour {
 	private bool _isShaking = false;
 	private bool _isDropped = false;
 
-	void Start () {
+	private MeshRenderer _meshRend;
+	private Color _color;
 
-		iTween.MoveFrom(gameObject,iTween.Hash("y",-10,"time",3,"delay",Random.Range(1.0f,3.0f)));
+	void Start () {
+		
+		_meshRend = GetComponent<MeshRenderer>();
+		_color = _meshRend.material.color;
+
+		float delay = Random.Range(1.0f,3.0f);
+		iTween.MoveFrom(gameObject,iTween.Hash("y",-10,"time",3,"delay",delay));
+		iTween.FadeFrom(gameObject,iTween.Hash("a",0,"time",2,"delay",delay));
 		resetTimers();
 
 	}
@@ -51,6 +59,7 @@ public class Platform : MonoBehaviour {
 				_isShaking = false;
 				_isDropped = true;
 				iTween.MoveTo(gameObject, new Vector3(0,-10,0), 2);
+				iTween.FadeTo(gameObject, 0, 0.5f);
 			}
 			return;
 		}
@@ -62,6 +71,7 @@ public class Platform : MonoBehaviour {
 				_isSteady = true;
 				resetTimers();
 				iTween.MoveTo(gameObject, new Vector3(0,0,0), 2);
+				iTween.FadeTo(gameObject, 1, 0.8);
 			}
 			return;
 		}

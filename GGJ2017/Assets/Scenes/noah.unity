@@ -185,13 +185,13 @@ Prefab:
       propertyPath: m_Name
       value: Level
       objectReference: {fileID: 0}
-    - target: {fileID: 1753185360261250, guid: 3977497e27f0eec44b26f0e650c59701, type: 2}
+    - target: {fileID: 1400808295806142, guid: 3977497e27f0eec44b26f0e650c59701, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1965810223976536, guid: 3977497e27f0eec44b26f0e650c59701, type: 2}
-      propertyPath: m_IsActive
-      value: 1
+    - target: {fileID: 4872838063148560, guid: 3977497e27f0eec44b26f0e650c59701, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3977497e27f0eec44b26f0e650c59701, type: 2}
