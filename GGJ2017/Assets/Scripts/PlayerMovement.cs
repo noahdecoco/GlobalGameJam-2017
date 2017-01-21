@@ -4,13 +4,19 @@ using System.Collections;
 public class PlayerMovement : MonoBehaviour {
 
 	public float moveSpeed = 10f;
+	private bool _isGrounded = true;
+	private Rigidbody _rigidBody;
+
+	void Start() {
+
+		_rigidBody = GetComponent<Rigidbody>();
+
+	}
 
 	void OnTriggerEnter(Collider other) {
 		
 		if(other.tag == "MovingPlatform"){
-			print(other.tag);
-//			transform.parent = other.transform;
-
+			_isGrounded = true;
 		}
 
 	}
@@ -18,9 +24,7 @@ public class PlayerMovement : MonoBehaviour {
 	void OnTriggerExit(Collider other) {
 		
 		if(other.tag == "MovingPlatform"){
-			print(other.tag);
-//			transform.parent = null;
-
+			_isGrounded = false;
 		}
 
 	}
@@ -40,9 +44,11 @@ public class PlayerMovement : MonoBehaviour {
 		if(Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
 			transform.Translate(Vector3.right.normalized * moveSpeed * Time.deltaTime);
 
-		if(Input.GetKey(KeyCode.Space))
-			transform.Translate(Vector3.up * 6 * Time.deltaTime, Space.World);
-
+		if(Input.GetKey(KeyCode.Space) && _isGrounded) {
+			print("Jump");
+			// transform.Translate(Vector3.up * 12 * Time.deltaTime, Space.World);
+			// _rigidBody.AddForce(Vector3.up * 5000);
+		}
 
 	}
 }	
