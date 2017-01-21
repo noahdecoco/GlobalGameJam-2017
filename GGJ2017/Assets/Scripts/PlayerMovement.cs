@@ -36,8 +36,25 @@ public class PlayerMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
 		HandleInput();
+
+		//if(Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
+		//	transform.Translate(Vector3.forward.normalized * moveSpeed * Time.deltaTime, Space.World);
+        
+		//if(Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
+		//	transform.Translate(-Vector3.forward.normalized * moveSpeed * Time.deltaTime, Space.World);
+        
+		//if(Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
+		//	transform.Translate(Vector3.right.normalized * -moveSpeed * Time.deltaTime, Space.World);
+        
+		//if(Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
+		//	transform.Translate(Vector3.right.normalized * moveSpeed * Time.deltaTime, Space.World);
+
+		//if(Input.GetKey(KeyCode.Space) && _isGrounded) {
+		//	print("Jump");
+		//	// transform.Translate(Vector3.up * 12 * Time.deltaTime, Space.World);
+		//	// _rigidBody.AddForce(Vector3.up * 5000);
+		//}
 	}
 
 	void HandleInput()
