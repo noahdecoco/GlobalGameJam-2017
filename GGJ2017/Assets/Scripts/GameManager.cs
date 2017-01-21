@@ -14,20 +14,16 @@ public class GameManager : MonoBehaviour
 
     private SpawnPoints spawnPoints;
     
-	// Use this for initialization
+	// Unity callbacks.
 	void Start ()
     {
         spawnPoints = LevelObject.GetComponent<SpawnPoints>();
 
+        // TODO: Decide how many players are playing.
         StartGame(4);
     }
-	
-	// Update is called once per frame
-	void Update ()
-    {
-		
-	}
 
+    // Public methods.
     public void StartGame(int numberOfPlayers)
     {
         GameObject[] spawnPointsToUse =

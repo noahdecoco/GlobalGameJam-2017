@@ -137,6 +137,10 @@ public class PlayerMovement : MonoBehaviour
         direction.Normalize();
 
         transform.Translate(direction * moveSpeed * Time.deltaTime, Space.World);
+
+        transform.LookAt(transform.position + direction);
+
+        transform.eulerAngles = new Vector3(0f, transform.eulerAngles.y, 0f);
     }
 
     // Drain/Charge interaction
