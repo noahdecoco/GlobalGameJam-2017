@@ -71,7 +71,7 @@ public class Platform : MonoBehaviour {
 				_isSteady = true;
 				resetTimers();
 				iTween.MoveTo(gameObject, new Vector3(0,0,0), 2);
-				iTween.FadeTo(gameObject, 1, 0.8);
+				iTween.FadeTo(gameObject, 1, 0.8f);
 			}
 			return;
 		}
