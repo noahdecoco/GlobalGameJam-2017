@@ -1,0 +1,716 @@
+fileFormatVersion: 2
+guid: 30b377ffd248ac64194d43f6862a47b4
+timeCreated: 1485023160
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: wizard
+    100004: Wizcape1
+    100006: Wizcape2
+    100008: Wizcape3
+    100010: Wizcape4
+    100012: Wizchest
+    100014: Wizhead
+    100016: WizLArm1
+    100018: WizLArm2
+    100020: WizLArmCollarbone
+    100022: WizLArmDigit11
+    100024: WizLArmDigit12
+    100026: WizLArmDigit13
+    100028: WizLArmDigit21
+    100030: WizLArmDigit22
+    100032: WizLArmDigit23
+    100034: WizLArmDigit31
+    100036: WizLArmDigit32
+    100038: WizLArmDigit33
+    100040: WizLArmPalm
+    100042: WizLLeg1
+    100044: WizLLeg2
+    100046: WizLLegAnkle
+    100048: WizLLegDigit11
+    100050: WizLLegPlatform
+    100052: Wizpelvis
+    100054: Wizponytail1
+    100056: Wizponytail2
+    100058: Wizponytail3
+    100060: WizRArm1
+    100062: WizRArm2
+    100064: WizRArmCollarbone
+    100066: WizRArmDigit11
+    100068: WizRArmDigit12
+    100070: WizRArmDigit13
+    100072: WizRArmDigit21
+    100074: WizRArmDigit22
+    100076: WizRArmDigit23
+    100078: WizRArmDigit31
+    100080: WizRArmDigit32
+    100082: WizRArmDigit33
+    100084: WizRArmPalm
+    100086: WizRig
+    100088: WizRLeg1
+    100090: WizRLeg2
+    100092: WizRLegAnkle
+    100094: WizRLegDigit11
+    100096: WizRLegPlatform
+    100098: WizSpine
+    100100: WizSpine1
+    100102: WizSpine2
+    100104: WizSpine3
+    400000: wizard
+    400002: //RootNode
+    400004: Wizcape1
+    400006: Wizcape2
+    400008: Wizcape3
+    400010: Wizcape4
+    400012: Wizchest
+    400014: Wizhead
+    400016: WizLArm1
+    400018: WizLArm2
+    400020: WizLArmCollarbone
+    400022: WizLArmDigit11
+    400024: WizLArmDigit12
+    400026: WizLArmDigit13
+    400028: WizLArmDigit21
+    400030: WizLArmDigit22
+    400032: WizLArmDigit23
+    400034: WizLArmDigit31
+    400036: WizLArmDigit32
+    400038: WizLArmDigit33
+    400040: WizLArmPalm
+    400042: WizLLeg1
+    400044: WizLLeg2
+    400046: WizLLegAnkle
+    400048: WizLLegDigit11
+    400050: WizLLegPlatform
+    400052: Wizpelvis
+    400054: Wizponytail1
+    400056: Wizponytail2
+    400058: Wizponytail3
+    400060: WizRArm1
+    400062: WizRArm2
+    400064: WizRArmCollarbone
+    400066: WizRArmDigit11
+    400068: WizRArmDigit12
+    400070: WizRArmDigit13
+    400072: WizRArmDigit21
+    400074: WizRArmDigit22
+    400076: WizRArmDigit23
+    400078: WizRArmDigit31
+    400080: WizRArmDigit32
+    400082: WizRArmDigit33
+    400084: WizRArmPalm
+    400086: WizRig
+    400088: WizRLeg1
+    400090: WizRLeg2
+    400092: WizRLegAnkle
+    400094: WizRLegDigit11
+    400096: WizRLegPlatform
+    400098: WizSpine
+    400100: WizSpine1
+    400102: WizSpine2
+    400104: WizSpine3
+    4300000: wizard
+    7400000: tpose
+    7400002: idle
+    7400004: run
+    7400006: magic
+    9500000: //RootNode
+    13700000: wizard
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: tpose
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 0
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: wizard
+        weight: 1
+      - path: WizLLegPlatform
+        weight: 1
+      - path: Wizpelvis
+        weight: 1
+      - path: Wizpelvis/WizLLeg1
+        weight: 1
+      - path: Wizpelvis/WizLLeg1/WizLLeg2
+        weight: 1
+      - path: Wizpelvis/WizLLeg1/WizLLeg2/WizLLegAnkle
+        weight: 1
+      - path: Wizpelvis/WizLLeg1/WizLLeg2/WizLLegAnkle/WizLLegDigit11
+        weight: 1
+      - path: Wizpelvis/WizRLeg1
+        weight: 1
+      - path: Wizpelvis/WizRLeg1/WizRLeg2
+        weight: 1
+      - path: Wizpelvis/WizRLeg1/WizRLeg2/WizRLegAnkle
+        weight: 1
+      - path: Wizpelvis/WizRLeg1/WizRLeg2/WizRLegAnkle/WizRLegDigit11
+        weight: 1
+      - path: Wizpelvis/WizSpine1
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/Wizcape1
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/Wizcape1/Wizcape2
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/Wizcape1/Wizcape2/Wizcape3
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/Wizcape1/Wizcape2/Wizcape3/Wizcape4
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizLArmCollarbone
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizLArmCollarbone/WizLArm1
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizLArmCollarbone/WizLArm1/WizLArm2
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizLArmCollarbone/WizLArm1/WizLArm2/WizLArmPalm
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizLArmCollarbone/WizLArm1/WizLArm2/WizLArmPalm/WizLArmDigit11
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizLArmCollarbone/WizLArm1/WizLArm2/WizLArmPalm/WizLArmDigit11/WizLArmDigit12
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizLArmCollarbone/WizLArm1/WizLArm2/WizLArmPalm/WizLArmDigit11/WizLArmDigit12/WizLArmDigit13
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizLArmCollarbone/WizLArm1/WizLArm2/WizLArmPalm/WizLArmDigit21
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizLArmCollarbone/WizLArm1/WizLArm2/WizLArmPalm/WizLArmDigit21/WizLArmDigit22
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizLArmCollarbone/WizLArm1/WizLArm2/WizLArmPalm/WizLArmDigit21/WizLArmDigit22/WizLArmDigit23
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizLArmCollarbone/WizLArm1/WizLArm2/WizLArmPalm/WizLArmDigit31
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizLArmCollarbone/WizLArm1/WizLArm2/WizLArmPalm/WizLArmDigit31/WizLArmDigit32
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizLArmCollarbone/WizLArm1/WizLArm2/WizLArmPalm/WizLArmDigit31/WizLArmDigit32/WizLArmDigit33
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizRArmCollarbone
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizRArmCollarbone/WizRArm1
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizRArmCollarbone/WizRArm1/WizRArm2
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizRArmCollarbone/WizRArm1/WizRArm2/WizRArmPalm
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizRArmCollarbone/WizRArm1/WizRArm2/WizRArmPalm/WizRArmDigit11
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizRArmCollarbone/WizRArm1/WizRArm2/WizRArmPalm/WizRArmDigit11/WizRArmDigit12
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizRArmCollarbone/WizRArm1/WizRArm2/WizRArmPalm/WizRArmDigit11/WizRArmDigit12/WizRArmDigit13
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizRArmCollarbone/WizRArm1/WizRArm2/WizRArmPalm/WizRArmDigit21
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizRArmCollarbone/WizRArm1/WizRArm2/WizRArmPalm/WizRArmDigit21/WizRArmDigit22
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizRArmCollarbone/WizRArm1/WizRArm2/WizRArmPalm/WizRArmDigit21/WizRArmDigit22/WizRArmDigit23
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizRArmCollarbone/WizRArm1/WizRArm2/WizRArmPalm/WizRArmDigit31
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizRArmCollarbone/WizRArm1/WizRArm2/WizRArmPalm/WizRArmDigit31/WizRArmDigit32
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizRArmCollarbone/WizRArm1/WizRArm2/WizRArmPalm/WizRArmDigit31/WizRArmDigit32/WizRArmDigit33
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizSpine
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizSpine/Wizhead
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizSpine/Wizhead/Wizponytail1
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizSpine/Wizhead/Wizponytail1/Wizponytail2
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizSpine/Wizhead/Wizponytail1/Wizponytail2/Wizponytail3
+        weight: 1
+      - path: WizRLegPlatform
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: idle
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: wizard
+        weight: 1
+      - path: WizLLegPlatform
+        weight: 1
+      - path: Wizpelvis
+        weight: 1
+      - path: Wizpelvis/WizLLeg1
+        weight: 1
+      - path: Wizpelvis/WizLLeg1/WizLLeg2
+        weight: 1
+      - path: Wizpelvis/WizLLeg1/WizLLeg2/WizLLegAnkle
+        weight: 1
+      - path: Wizpelvis/WizLLeg1/WizLLeg2/WizLLegAnkle/WizLLegDigit11
+        weight: 1
+      - path: Wizpelvis/WizRLeg1
+        weight: 1
+      - path: Wizpelvis/WizRLeg1/WizRLeg2
+        weight: 1
+      - path: Wizpelvis/WizRLeg1/WizRLeg2/WizRLegAnkle
+        weight: 1
+      - path: Wizpelvis/WizRLeg1/WizRLeg2/WizRLegAnkle/WizRLegDigit11
+        weight: 1
+      - path: Wizpelvis/WizSpine1
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/Wizcape1
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/Wizcape1/Wizcape2
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/Wizcape1/Wizcape2/Wizcape3
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/Wizcape1/Wizcape2/Wizcape3/Wizcape4
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizLArmCollarbone
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizLArmCollarbone/WizLArm1
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizLArmCollarbone/WizLArm1/WizLArm2
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizLArmCollarbone/WizLArm1/WizLArm2/WizLArmPalm
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizLArmCollarbone/WizLArm1/WizLArm2/WizLArmPalm/WizLArmDigit11
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizLArmCollarbone/WizLArm1/WizLArm2/WizLArmPalm/WizLArmDigit11/WizLArmDigit12
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizLArmCollarbone/WizLArm1/WizLArm2/WizLArmPalm/WizLArmDigit11/WizLArmDigit12/WizLArmDigit13
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizLArmCollarbone/WizLArm1/WizLArm2/WizLArmPalm/WizLArmDigit21
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizLArmCollarbone/WizLArm1/WizLArm2/WizLArmPalm/WizLArmDigit21/WizLArmDigit22
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizLArmCollarbone/WizLArm1/WizLArm2/WizLArmPalm/WizLArmDigit21/WizLArmDigit22/WizLArmDigit23
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizLArmCollarbone/WizLArm1/WizLArm2/WizLArmPalm/WizLArmDigit31
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizLArmCollarbone/WizLArm1/WizLArm2/WizLArmPalm/WizLArmDigit31/WizLArmDigit32
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizLArmCollarbone/WizLArm1/WizLArm2/WizLArmPalm/WizLArmDigit31/WizLArmDigit32/WizLArmDigit33
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizRArmCollarbone
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizRArmCollarbone/WizRArm1
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizRArmCollarbone/WizRArm1/WizRArm2
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizRArmCollarbone/WizRArm1/WizRArm2/WizRArmPalm
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizRArmCollarbone/WizRArm1/WizRArm2/WizRArmPalm/WizRArmDigit11
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizRArmCollarbone/WizRArm1/WizRArm2/WizRArmPalm/WizRArmDigit11/WizRArmDigit12
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizRArmCollarbone/WizRArm1/WizRArm2/WizRArmPalm/WizRArmDigit11/WizRArmDigit12/WizRArmDigit13
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizRArmCollarbone/WizRArm1/WizRArm2/WizRArmPalm/WizRArmDigit21
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizRArmCollarbone/WizRArm1/WizRArm2/WizRArmPalm/WizRArmDigit21/WizRArmDigit22
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizRArmCollarbone/WizRArm1/WizRArm2/WizRArmPalm/WizRArmDigit21/WizRArmDigit22/WizRArmDigit23
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizRArmCollarbone/WizRArm1/WizRArm2/WizRArmPalm/WizRArmDigit31
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizRArmCollarbone/WizRArm1/WizRArm2/WizRArmPalm/WizRArmDigit31/WizRArmDigit32
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizRArmCollarbone/WizRArm1/WizRArm2/WizRArmPalm/WizRArmDigit31/WizRArmDigit32/WizRArmDigit33
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizSpine
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizSpine/Wizhead
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizSpine/Wizhead/Wizponytail1
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizSpine/Wizhead/Wizponytail1/Wizponytail2
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizSpine/Wizhead/Wizponytail1/Wizponytail2/Wizponytail3
+        weight: 1
+      - path: WizRLegPlatform
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: run
+      takeName: Take 001
+      firstFrame: 31
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: wizard
+        weight: 1
+      - path: WizLLegPlatform
+        weight: 1
+      - path: Wizpelvis
+        weight: 1
+      - path: Wizpelvis/WizLLeg1
+        weight: 1
+      - path: Wizpelvis/WizLLeg1/WizLLeg2
+        weight: 1
+      - path: Wizpelvis/WizLLeg1/WizLLeg2/WizLLegAnkle
+        weight: 1
+      - path: Wizpelvis/WizLLeg1/WizLLeg2/WizLLegAnkle/WizLLegDigit11
+        weight: 1
+      - path: Wizpelvis/WizRLeg1
+        weight: 1
+      - path: Wizpelvis/WizRLeg1/WizRLeg2
+        weight: 1
+      - path: Wizpelvis/WizRLeg1/WizRLeg2/WizRLegAnkle
+        weight: 1
+      - path: Wizpelvis/WizRLeg1/WizRLeg2/WizRLegAnkle/WizRLegDigit11
+        weight: 1
+      - path: Wizpelvis/WizSpine1
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/Wizcape1
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/Wizcape1/Wizcape2
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/Wizcape1/Wizcape2/Wizcape3
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/Wizcape1/Wizcape2/Wizcape3/Wizcape4
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizLArmCollarbone
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizLArmCollarbone/WizLArm1
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizLArmCollarbone/WizLArm1/WizLArm2
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizLArmCollarbone/WizLArm1/WizLArm2/WizLArmPalm
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizLArmCollarbone/WizLArm1/WizLArm2/WizLArmPalm/WizLArmDigit11
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizLArmCollarbone/WizLArm1/WizLArm2/WizLArmPalm/WizLArmDigit11/WizLArmDigit12
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizLArmCollarbone/WizLArm1/WizLArm2/WizLArmPalm/WizLArmDigit11/WizLArmDigit12/WizLArmDigit13
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizLArmCollarbone/WizLArm1/WizLArm2/WizLArmPalm/WizLArmDigit21
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizLArmCollarbone/WizLArm1/WizLArm2/WizLArmPalm/WizLArmDigit21/WizLArmDigit22
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizLArmCollarbone/WizLArm1/WizLArm2/WizLArmPalm/WizLArmDigit21/WizLArmDigit22/WizLArmDigit23
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizLArmCollarbone/WizLArm1/WizLArm2/WizLArmPalm/WizLArmDigit31
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizLArmCollarbone/WizLArm1/WizLArm2/WizLArmPalm/WizLArmDigit31/WizLArmDigit32
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizLArmCollarbone/WizLArm1/WizLArm2/WizLArmPalm/WizLArmDigit31/WizLArmDigit32/WizLArmDigit33
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizRArmCollarbone
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizRArmCollarbone/WizRArm1
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizRArmCollarbone/WizRArm1/WizRArm2
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizRArmCollarbone/WizRArm1/WizRArm2/WizRArmPalm
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizRArmCollarbone/WizRArm1/WizRArm2/WizRArmPalm/WizRArmDigit11
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizRArmCollarbone/WizRArm1/WizRArm2/WizRArmPalm/WizRArmDigit11/WizRArmDigit12
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizRArmCollarbone/WizRArm1/WizRArm2/WizRArmPalm/WizRArmDigit11/WizRArmDigit12/WizRArmDigit13
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizRArmCollarbone/WizRArm1/WizRArm2/WizRArmPalm/WizRArmDigit21
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizRArmCollarbone/WizRArm1/WizRArm2/WizRArmPalm/WizRArmDigit21/WizRArmDigit22
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizRArmCollarbone/WizRArm1/WizRArm2/WizRArmPalm/WizRArmDigit21/WizRArmDigit22/WizRArmDigit23
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizRArmCollarbone/WizRArm1/WizRArm2/WizRArmPalm/WizRArmDigit31
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizRArmCollarbone/WizRArm1/WizRArm2/WizRArmPalm/WizRArmDigit31/WizRArmDigit32
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizRArmCollarbone/WizRArm1/WizRArm2/WizRArmPalm/WizRArmDigit31/WizRArmDigit32/WizRArmDigit33
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizSpine
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizSpine/Wizhead
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizSpine/Wizhead/Wizponytail1
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizSpine/Wizhead/Wizponytail1/Wizponytail2
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizSpine/Wizhead/Wizponytail1/Wizponytail2/Wizponytail3
+        weight: 1
+      - path: WizRLegPlatform
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: magic
+      takeName: Take 001
+      firstFrame: 61
+      lastFrame: 65
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: wizard
+        weight: 1
+      - path: WizLLegPlatform
+        weight: 1
+      - path: Wizpelvis
+        weight: 1
+      - path: Wizpelvis/WizLLeg1
+        weight: 1
+      - path: Wizpelvis/WizLLeg1/WizLLeg2
+        weight: 1
+      - path: Wizpelvis/WizLLeg1/WizLLeg2/WizLLegAnkle
+        weight: 1
+      - path: Wizpelvis/WizLLeg1/WizLLeg2/WizLLegAnkle/WizLLegDigit11
+        weight: 1
+      - path: Wizpelvis/WizRLeg1
+        weight: 1
+      - path: Wizpelvis/WizRLeg1/WizRLeg2
+        weight: 1
+      - path: Wizpelvis/WizRLeg1/WizRLeg2/WizRLegAnkle
+        weight: 1
+      - path: Wizpelvis/WizRLeg1/WizRLeg2/WizRLegAnkle/WizRLegDigit11
+        weight: 1
+      - path: Wizpelvis/WizSpine1
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/Wizcape1
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/Wizcape1/Wizcape2
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/Wizcape1/Wizcape2/Wizcape3
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/Wizcape1/Wizcape2/Wizcape3/Wizcape4
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizLArmCollarbone
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizLArmCollarbone/WizLArm1
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizLArmCollarbone/WizLArm1/WizLArm2
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizLArmCollarbone/WizLArm1/WizLArm2/WizLArmPalm
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizLArmCollarbone/WizLArm1/WizLArm2/WizLArmPalm/WizLArmDigit11
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizLArmCollarbone/WizLArm1/WizLArm2/WizLArmPalm/WizLArmDigit11/WizLArmDigit12
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizLArmCollarbone/WizLArm1/WizLArm2/WizLArmPalm/WizLArmDigit11/WizLArmDigit12/WizLArmDigit13
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizLArmCollarbone/WizLArm1/WizLArm2/WizLArmPalm/WizLArmDigit21
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizLArmCollarbone/WizLArm1/WizLArm2/WizLArmPalm/WizLArmDigit21/WizLArmDigit22
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizLArmCollarbone/WizLArm1/WizLArm2/WizLArmPalm/WizLArmDigit21/WizLArmDigit22/WizLArmDigit23
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizLArmCollarbone/WizLArm1/WizLArm2/WizLArmPalm/WizLArmDigit31
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizLArmCollarbone/WizLArm1/WizLArm2/WizLArmPalm/WizLArmDigit31/WizLArmDigit32
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizLArmCollarbone/WizLArm1/WizLArm2/WizLArmPalm/WizLArmDigit31/WizLArmDigit32/WizLArmDigit33
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizRArmCollarbone
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizRArmCollarbone/WizRArm1
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizRArmCollarbone/WizRArm1/WizRArm2
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizRArmCollarbone/WizRArm1/WizRArm2/WizRArmPalm
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizRArmCollarbone/WizRArm1/WizRArm2/WizRArmPalm/WizRArmDigit11
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizRArmCollarbone/WizRArm1/WizRArm2/WizRArmPalm/WizRArmDigit11/WizRArmDigit12
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizRArmCollarbone/WizRArm1/WizRArm2/WizRArmPalm/WizRArmDigit11/WizRArmDigit12/WizRArmDigit13
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizRArmCollarbone/WizRArm1/WizRArm2/WizRArmPalm/WizRArmDigit21
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizRArmCollarbone/WizRArm1/WizRArm2/WizRArmPalm/WizRArmDigit21/WizRArmDigit22
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizRArmCollarbone/WizRArm1/WizRArm2/WizRArmPalm/WizRArmDigit21/WizRArmDigit22/WizRArmDigit23
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizRArmCollarbone/WizRArm1/WizRArm2/WizRArmPalm/WizRArmDigit31
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizRArmCollarbone/WizRArm1/WizRArm2/WizRArmPalm/WizRArmDigit31/WizRArmDigit32
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizRArmCollarbone/WizRArm1/WizRArm2/WizRArmPalm/WizRArmDigit31/WizRArmDigit32/WizRArmDigit33
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizSpine
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizSpine/Wizhead
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizSpine/Wizhead/Wizponytail1
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizSpine/Wizhead/Wizponytail1/Wizponytail2
+        weight: 1
+      - path: Wizpelvis/WizSpine1/WizSpine2/WizSpine3/Wizchest/WizSpine/Wizhead/Wizponytail1/Wizponytail2/Wizponytail3
+        weight: 1
+      - path: WizRLegPlatform
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 49
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

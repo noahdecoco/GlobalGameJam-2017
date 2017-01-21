@@ -18,12 +18,14 @@ public class CrystalView : MonoBehaviour
 
     private Material crystalMaterial;
 
+    // Unity callbacks.
 	void Start ()
     {
         // Listen for battery events.
         battery = GetComponent<Battery>();
         
         battery.ChargeValueChangedEvent += OnChargeValueChanged;
+        battery.ChargeDrainedEvent += OnChargeDrained;
 
         // Get access to the crystal material.
         Transform crystalTransform = transform.Find("Offsets").Find("chrystal");
@@ -40,7 +42,8 @@ public class CrystalView : MonoBehaviour
         crystalMaterial.color = crystalColors[crystalInfo.PlayerIndex];
     }
 
-    void OnChargeValueChanged(object sender, float chargeValue)
+    // Private methods.
+    private void OnChargeValueChanged(object sender, float chargeValue)
     {
         // TODO: Insert more code affecting how crystal looks here.
 
@@ -50,5 +53,10 @@ public class CrystalView : MonoBehaviour
             crystalMaterial.color.g, 
             crystalMaterial.color.b, 
             chargeValue);
+    }
+
+    private void OnChargeDrained(object sender, CrystalInfo crystalInfo)
+    {
+        // TODO: Some kind of spectacular explosion.
     }
 }
