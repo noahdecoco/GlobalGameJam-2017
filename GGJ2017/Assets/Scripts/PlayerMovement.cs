@@ -5,6 +5,25 @@ public class PlayerMovement : MonoBehaviour {
 
 	public float moveSpeed = 10f;
 
+	void OnTriggerEnter(Collider other) {
+		
+		if(other.tag == "MovingPlatform"){
+			print(other.tag);
+//			transform.parent = other.transform;
+
+		}
+
+	}
+
+	void OnTriggerExit(Collider other) {
+		
+		if(other.tag == "MovingPlatform"){
+			print(other.tag);
+//			transform.parent = null;
+
+		}
+
+	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -20,6 +39,10 @@ public class PlayerMovement : MonoBehaviour {
         
 		if(Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
 			transform.Translate(Vector3.right.normalized * moveSpeed * Time.deltaTime);
+
+		if(Input.GetKey(KeyCode.Space))
+			transform.Translate(Vector3.up * 6 * Time.deltaTime, Space.World);
+
 
 	}
 }	
