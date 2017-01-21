@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using XInputDotNetPure; // Required in C#
 
 public class PlayerMovement : MonoBehaviour {
 
@@ -79,18 +80,11 @@ public class PlayerMovement : MonoBehaviour {
         prevState = state;
         state = GamePad.GetState(playerIndex);
 
-        // Detect if a button was pressed this frame
-        if (prevState.Buttons.A == ButtonState.Released && state.Buttons.A == ButtonState.Pressed)
-        {
-            GetComponent<Renderer>().material.color = new Color(Random.value, Random.value, Random.value, 1.0f);
-        }
-        // Detect if a button was released this frame
-        if (prevState.Buttons.A == ButtonState.Pressed && state.Buttons.A == ButtonState.Released)
-        {
-            GetComponent<Renderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
-        }
+        var direction = new Vector3(state.ThumbSticks.Left.X, 0f, state.ThumbSticks.Left.Y);
+
+        transform.Translate(direction * moveSpeed * Time.deltaTime, Space.World);
 
         // Make the current object turn
-        transform.localRotation *= Quaternion.Euler(0.0f, state.ThumbSticks.Left.X * 25.0f * Time.deltaTime, 0.0f);
+        //transform.localRotation *= Quaternion.Euler(0.0f, state.ThumbSticks.Left.X * 25.0f * Time.deltaTime, 0.0f);
     }
 }	
