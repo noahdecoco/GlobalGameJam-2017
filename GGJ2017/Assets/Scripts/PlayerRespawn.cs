@@ -8,7 +8,7 @@ public class PlayerRespawn : MonoBehaviour
     public static Vector3 __global_PlayerSpawnOffset = new Vector3(2f, 0f, 2f);
 
     // Public vars.
-    public GameObject respawnPoint;
+    public GameObject RespawnPoint;
     
     // Private vars.
     private float respawnTime = 5.0f;
@@ -26,14 +26,14 @@ public class PlayerRespawn : MonoBehaviour
         }
  	}
 
-    // Private methods.
-    private void Respawn()
+    // Public methods.
+    public void Respawn()
     {
         gameObject.SetActive(true);
 
         // The magic number here is a percentage of the vector between the 
         // origin and the crystal spawn position. This places the player 
         // between the crystal and the origin.
-        gameObject.transform.position = respawnPoint.transform.position * 0.92f;
+        gameObject.transform.position = RespawnPoint.transform.position * 0.92f;
     }
  }

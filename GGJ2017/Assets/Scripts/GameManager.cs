@@ -65,7 +65,11 @@ public class GameManager : MonoBehaviour
             Debug.Assert(playerIndex == i, "playerIndex is " + playerIndex + ", expected " + i);
 
             // Set spawn point and spawn player.
-            newPlayer.GetComponent<PlayerRespawn>().respawnPoint = spawnPointsToUse[i];
+            PlayerRespawn playerRespawn = newPlayer.GetComponent<PlayerRespawn>();
+
+            playerRespawn.RespawnPoint = spawnPointsToUse[i];
+
+            playerRespawn.Respawn();
 
             // Listen for battery charge drained event (loss condition).
             Battery newBattery = newCrystal.GetComponent<Battery>();
