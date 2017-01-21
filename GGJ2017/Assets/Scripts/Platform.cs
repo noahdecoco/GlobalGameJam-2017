@@ -35,7 +35,7 @@ public class Platform : MonoBehaviour {
 		currentLerpTime += Time.deltaTime;
 		if (currentLerpTime > lerpTime) currentLerpTime = lerpTime;
 		float perc = currentLerpTime / lerpTime;
-		print("drop" + perc);
+		//print("drop" + perc);
 		transform.position = Vector3.Lerp(_oldPosition, _newPosition, perc);
 	}
 
