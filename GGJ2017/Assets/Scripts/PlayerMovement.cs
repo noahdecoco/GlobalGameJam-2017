@@ -10,12 +10,12 @@ public class PlayerMovement : MonoBehaviour
     public bool useKeyboardControls = false;
 
     // Static (global) vars. Don't use globals, except for the GLOBAL GAME JAM!!!
-    public static bool[] ClaimedPlayerIndices = new bool[] { false, false, false, false };
+    public static bool[] ClaimedGamepadIndices = new bool[] { false, false, false, false };
 
     // Input vars.
-    private bool playerIndexSet = false;
+    private bool gamepadIndexSet = false;
 
-    private PlayerIndex playerIndex;
+    private PlayerIndex gamepadIndex;
 
     private GamePadState state;
 
@@ -34,13 +34,13 @@ public class PlayerMovement : MonoBehaviour
         if (useKeyboardControls)
         {
             // Drop the gamepad index.
-            if (playerIndexSet)
+            if (gamepadIndexSet)
             {
-                Debug.Log(string.Format("{0} dropping gamepad {1} due to enabling keyboard controls", gameObject.name, playerIndex));
+                Debug.Log(string.Format("{0} dropping gamepad {1} due to enabling keyboard controls", gameObject.name, gamepadIndex));
 
-                ClaimedPlayerIndices[(int)playerIndex] = false;
+                ClaimedGamepadIndices[(int)gamepadIndex] = false;
 
-                playerIndexSet = false;
+                gamepadIndexSet = false;
             }
 
             direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
@@ -49,17 +49,17 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             // If gamepad disconnects, drop the index.
-            if (playerIndexSet && !prevState.IsConnected)
+            if (gamepadIndexSet && !prevState.IsConnected)
             {
-                Debug.Log(string.Format("{0} dropping gamepad {1} due to disconnection", gameObject.name, playerIndex));
+                Debug.Log(string.Format("{0} dropping gamepad {1} due to disconnection", gameObject.name, gamepadIndex));
 
-                ClaimedPlayerIndices[(int)playerIndex] = false;
+                ClaimedGamepadIndices[(int)gamepadIndex] = false;
 
-                playerIndexSet = false;
+                gamepadIndexSet = false;
             }
 
             // If no index is set, claim one.
-            if (!playerIndexSet)
+            if (!gamepadIndexSet)
             {
                 for (int i = 0; i < 4; ++i)
                 {
@@ -69,15 +69,15 @@ public class PlayerMovement : MonoBehaviour
 
                     // Make sure controller is connected and not claimed yet.
                     if (testState.IsConnected 
-                        && ClaimedPlayerIndices[i] == false)
+                        && ClaimedGamepadIndices[i] == false)
                     {
                         Debug.Log(string.Format("{0} using gamepad {1}", gameObject.name, testPlayerIndex));
 
-                        playerIndex = testPlayerIndex;
+                        gamepadIndex = testPlayerIndex;
 
-                        playerIndexSet = true;
+                        gamepadIndexSet = true;
 
-                        ClaimedPlayerIndices[i] = true;
+                        ClaimedGamepadIndices[i] = true;
 
                         break;
                     }
@@ -85,11 +85,11 @@ public class PlayerMovement : MonoBehaviour
             }
 
             // If index is set, use gamepad!
-            if (playerIndexSet)
+            if (gamepadIndexSet)
             {
                 prevState = state;
 
-                state = GamePad.GetState(playerIndex);
+                state = GamePad.GetState(gamepadIndex);
 
                 direction = new Vector3(state.ThumbSticks.Left.X, 0f, state.ThumbSticks.Left.Y);
             }
