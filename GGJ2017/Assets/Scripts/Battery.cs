@@ -16,6 +16,8 @@ public class Battery : MonoBehaviour
     public float ChargeValue { get { return chargeValue; } }
 
     // Private vars.
+    private CrystalInfo crystalInfo;
+
     private float chargeValue = 1f;
 
     // Unity callbacks.
@@ -25,6 +27,8 @@ public class Battery : MonoBehaviour
         {
             __global_Batteries.Add(this);
         }
+
+        crystalInfo = GetComponent<CrystalInfo>();
     }
 
     // Public methods.
@@ -45,9 +49,27 @@ public class Battery : MonoBehaviour
         // Don't go under 0%.
         chargeValue = Mathf.Max(chargeValue, 0f);
 
-        Debug.Log(chargeValue);
+        //Debug.Log(chargeValue);
 
         ChargeValueChangedEvent(this, chargeValue);
+    }
+
+    public bool IsFriendlyWith(PlayerInfo somePlayerInfo)
+    {
+        //PlayerInfo playerInfo = otherObject.GetComponent<PlayerInfo>();
+
+        if (somePlayerInfo)
+        {
+            Debug.Log(somePlayerInfo.gameObject.name + " has index " + somePlayerInfo.PlayerIndex + ", crystal has index " + crystalInfo.PlayerIndex);
+        }
+
+        if (somePlayerInfo
+            && somePlayerInfo.PlayerIndex == crystalInfo.PlayerIndex)
+        {
+            return true;
+        }
+
+        return false;
     }
 
     // Static (global) methods.
