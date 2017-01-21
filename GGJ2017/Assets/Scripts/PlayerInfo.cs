@@ -13,7 +13,7 @@ public class PlayerInfo : MonoBehaviour
     // Private vars.
     private Transform[] wizardModels = new Transform[4];
 
-    void Start()
+    public void AssignIndex()
     {
         if (PlayerIndex == -1)
         {
