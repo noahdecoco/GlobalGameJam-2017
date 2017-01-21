@@ -58,6 +58,7 @@ ModelImporter:
     100100: WizSpine1
     100102: WizSpine2
     100104: WizSpine3
+    100106: BeamOrigin
     400000: wizard
     400002: //RootNode
     400004: Wizcape1
@@ -111,6 +112,7 @@ ModelImporter:
     400100: WizSpine1
     400102: WizSpine2
     400104: WizSpine3
+    400106: BeamOrigin
     4300000: wizard
     7400000: tpose
     7400002: idle
