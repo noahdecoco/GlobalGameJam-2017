@@ -12,6 +12,9 @@ public class Battery : MonoBehaviour
     public delegate void ChargeValueChangedHandler(object sender, float chargeValue);
     public event ChargeValueChangedHandler ChargeValueChangedEvent;
 
+    public delegate void ChargeDrainedHandler(object sender, CrystalInfo crystalInfo);
+    public event ChargeDrainedHandler ChargeDrainedEvent;
+
     // Public vars.
     public float ChargeValue { get { return chargeValue; } }
 
@@ -49,9 +52,12 @@ public class Battery : MonoBehaviour
         // Don't go under 0%.
         chargeValue = Mathf.Max(chargeValue, 0f);
 
-        //Debug.Log(chargeValue);
-
         ChargeValueChangedEvent(this, chargeValue);
+
+        if (chargeValue <= 0f)
+        {
+            ChargeDrainedEvent(this, crystalInfo);
+        }
     }
 
     public bool IsFriendlyWith(PlayerInfo somePlayerInfo)
