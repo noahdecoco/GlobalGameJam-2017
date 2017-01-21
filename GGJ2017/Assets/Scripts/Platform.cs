@@ -19,7 +19,7 @@ public class Platform : MonoBehaviour {
 
 	void Update () {
 
-		CalcDrop();
+		//CalcDrop();
 
 	}
 

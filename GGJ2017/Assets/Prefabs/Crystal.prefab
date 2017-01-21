@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 136355522560576302}
   - component: {fileID: 114622178641627494}
   - component: {fileID: 114211839176582976}
+  - component: {fileID: 114779300767012338}
   m_Layer: 0
   m_Name: Crystal
   m_TagString: Untagged
@@ -169,7 +170,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 310f46277e75f2b48934a0ddeba5f82f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ColorIndex: 0
 --- !u!114 &114622178641627494
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -181,6 +181,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b33579b640fad240b295e4ab16bffe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114779300767012338
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1311582120278508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13503942bfcb41f4680d8aaf52b3421c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerIndex: 0
 --- !u!136 &136355522560576302
 CapsuleCollider:
   m_ObjectHideFlags: 1

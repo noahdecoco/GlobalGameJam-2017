@@ -12,6 +12,13 @@ public class Interactor : MonoBehaviour
 
     public float DrainPercentagePerSecond = 0.25f;
 
+    private PlayerInfo playerInfo;
+
+    void Start()
+    {
+        playerInfo = GetComponent<PlayerInfo>();
+    }
+
     public void Interact()
     {
         if (!TryCharging())
@@ -25,7 +32,8 @@ public class Interactor : MonoBehaviour
     {
         Battery nearestBattery = Battery.FindNearestBatteryWithinDistance(transform.position, ChargeDistance);
 
-        if (nearestBattery)
+        if (nearestBattery 
+            && nearestBattery.IsFriendlyWith(playerInfo))
         {
             nearestBattery.Charge(ChargePercentagePerSecond * Time.deltaTime);
 
@@ -40,7 +48,8 @@ public class Interactor : MonoBehaviour
     {
         Battery nearestBattery = Battery.FindNearestBatteryWithinDistance(transform.position, ChargeDistance);
 
-        if (nearestBattery)
+        if (nearestBattery 
+            && !nearestBattery.IsFriendlyWith(playerInfo))
         {
             nearestBattery.Drain(DrainPercentagePerSecond * Time.deltaTime);
 
