@@ -20,32 +20,6 @@ public class PlayerMovement : MonoBehaviour
     private GamePadState state;
 
     private GamePadState prevState;
-
-    // Movement vars.
-	private bool _isGrounded = true;
-
-	private Rigidbody _rigidBody;
-
-	void Start()
-    {
-		_rigidBody = GetComponent<Rigidbody>();
-	}
-
-	void OnTriggerEnter(Collider other)
-    {
-		if (other.tag == "MovingPlatform")
-        {
-			_isGrounded = true;
-		}
-	}
-
-	void OnTriggerExit(Collider other)
-    {
-		if (other.tag == "MovingPlatform")
-        {
-			_isGrounded = false;
-		}
-	}
 	
 	// Update is called once per frame
 	void Update ()
@@ -62,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
             // Drop the gamepad index.
             if (playerIndexSet)
             {
-                Debug.Log(string.Format("{0} dropping gamepad {1}", gameObject.name, playerIndex));
+                Debug.Log(string.Format("{0} dropping gamepad {1} due to enabling keyboard controls", gameObject.name, playerIndex));
 
                 ClaimedPlayerIndices[(int)playerIndex] = false;
 
@@ -122,8 +96,8 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Perform movement.
+        direction.Normalize();
+
         transform.Translate(direction * moveSpeed * Time.deltaTime, Space.World);
     }
-
-    
 }	

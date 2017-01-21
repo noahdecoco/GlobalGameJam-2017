@@ -15,7 +15,7 @@ public class Platform : MonoBehaviour {
 	void Update () {
 		_timeToDrop -= Time.deltaTime;
 		if(_timeToDrop < 0){
-			gameObject.SetActive(false);
+			//gameObject.SetActive(false);
 		}
 	}
 }
