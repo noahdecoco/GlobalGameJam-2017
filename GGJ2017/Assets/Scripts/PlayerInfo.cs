@@ -4,56 +4,25 @@ using UnityEngine;
 
 public class PlayerInfo : MonoBehaviour
 {
-    // Static (global) vars. Don't use globals, except for the GLOBAL GAME JAM!!!
-    public static bool[] __global_ClaimedPlayerIndices = new bool[] { false, false, false, false };
+    // Events.
+    public delegate void PlayerIndexChangedHandler(object sender, int playerIndex);
+    public event PlayerIndexChangedHandler PlayerIndexChangedEvent;
 
     // Public vars.
-    public int PlayerIndex = -1;
-
-    // Private vars.
-    private Transform[] wizardModels = new Transform[4];
-
-    public void AssignIndex()
+    public int PlayerIndex
     {
-        if (PlayerIndex == -1)
+        get
         {
-            for (int i = 0; i < 4; ++i)
-            {
-                if (__global_ClaimedPlayerIndices[i] == false)
-                {
-                    Debug.Log(gameObject.name + " with index " + i.ToString() + " has joined the game.");
+            return playerIndex;
+        }
 
-                    PlayerIndex = i;
+        set
+        {
+            playerIndex = value;
 
-                    __global_ClaimedPlayerIndices[i] = true;
-
-                    SetCharacterModel();
-
-                    break;
-                }
-            }
+            PlayerIndexChangedEvent(this, playerIndex);
         }
     }
 
-    private void SetCharacterModel()
-    {
-        wizardModels[0] = transform.Find("WizardBlue");
-        wizardModels[1] = transform.Find("WizardGreen");
-        wizardModels[2] = transform.Find("WizardRed");
-        wizardModels[3] = transform.Find("WizardYellow");
-
-        for (int i = 0; i < 4; ++i)
-        {
-            if (PlayerIndex == i)
-            {
-                wizardModels[i].gameObject.SetActive(true);
-            }
-            else
-            {
-                wizardModels[i].gameObject.SetActive(false);
-            }
-        }
-
-        Debug.Log(gameObject.name + " is " + wizardModels[PlayerIndex].name);
-    }
+    private int playerIndex = -1;
 }

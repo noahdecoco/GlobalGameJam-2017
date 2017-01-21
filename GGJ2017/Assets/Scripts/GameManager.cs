@@ -58,11 +58,7 @@ public class GameManager : MonoBehaviour
 
             PlayerInfo playerInfo = newPlayer.GetComponent<PlayerInfo>();
 
-            playerInfo.AssignIndex();
-
-            int playerIndex = playerInfo.PlayerIndex;
-
-            Debug.Assert(playerIndex == i, "playerIndex is " + playerIndex + ", expected " + i);
+            playerInfo.PlayerIndex = i;
 
             // Set spawn point and spawn player.
             PlayerRespawn playerRespawn = newPlayer.GetComponent<PlayerRespawn>();
