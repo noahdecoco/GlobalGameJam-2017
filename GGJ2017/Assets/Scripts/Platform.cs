@@ -8,7 +8,7 @@ public class Platform : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		_timeToDrop = Random.Range(10.0f, 120.0f);
+		_timeToDrop = Random.Range(10.0f, 20.0f);
 	}
 	
 	// Update is called once per frame
