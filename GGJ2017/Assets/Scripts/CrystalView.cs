@@ -18,8 +18,13 @@ public class CrystalView : MonoBehaviour
 
     private Material crystalMaterial;
 
+    private Light crystalLight;
+
+    private ParticleSystem crystalSplosion;
+    private ParticleSystem crystalFlares;
+
     // Unity callbacks.
-	void Start ()
+    void Start ()
     {
         // Listen for battery events.
         battery = GetComponent<Battery>();
@@ -40,6 +45,16 @@ public class CrystalView : MonoBehaviour
         CrystalInfo crystalInfo = GetComponent<CrystalInfo>();
 
         crystalMaterial.color = crystalColors[crystalInfo.PlayerIndex];
+
+        crystalLight = transform.GetComponentInChildren<Light>();
+        crystalLight.color = new Color(
+            crystalMaterial.color.r,
+            crystalMaterial.color.g,
+            crystalMaterial.color.b,
+            crystalMaterial.color.a);
+
+        crystalSplosion = transform.FindChild("splosion").GetComponent<ParticleSystem>();
+        crystalFlares = transform.FindChild("flares").GetComponent<ParticleSystem>();
     }
 
     // Private methods.
@@ -52,6 +67,19 @@ public class CrystalView : MonoBehaviour
             crystalMaterial.color.r, 
             crystalMaterial.color.g, 
             crystalMaterial.color.b, 
+            chargeValue);
+
+
+        crystalFlares.startColor = new Color(
+            crystalMaterial.color.r,
+            crystalMaterial.color.g,
+            crystalMaterial.color.b,
+            chargeValue);
+
+        crystalSplosion.startColor = new Color(
+            crystalMaterial.color.r,
+            crystalMaterial.color.g,
+            crystalMaterial.color.b,
             chargeValue);
     }
 
