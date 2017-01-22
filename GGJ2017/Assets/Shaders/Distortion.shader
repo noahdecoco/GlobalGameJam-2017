@@ -4,7 +4,7 @@
 
 Shader "HeatDistort" {
 	Properties{
-		_BumpAmt("Distortion", range(0,1024)) = 10
+		_BumpAmt("Distortion", range(0,4096)) = 10
 		_MainTex("Tint Color (RGB)", 2D) = "white" {}
 		_BumpMap("Normalmap", 2D) = "bump" {}
 		_TintColor("Tint", Color) = (1.0, 1.0, 1.0, 1.0)
