@@ -49,6 +49,8 @@ public class Interactor : MonoBehaviour
         {
             nearestBattery.Charge(ChargePercentagePerSecond * Time.deltaTime);
 
+            rumbler.SetRumble(0.25f, 0.15f);
+
             return true;
         }
         
@@ -65,7 +67,7 @@ public class Interactor : MonoBehaviour
         {
             nearestBattery.Drain(DrainPercentagePerSecond * Time.deltaTime);
 
-            rumbler.SetRumble(0.15f, 0.25f);
+            rumbler.SetRumble(0.05f, 0.45f);
 
             return true;
         }
