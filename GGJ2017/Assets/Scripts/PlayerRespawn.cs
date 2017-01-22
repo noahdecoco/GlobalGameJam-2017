@@ -21,6 +21,8 @@ public class PlayerRespawn : MonoBehaviour
 
     private Rumbler rumbler;
 
+    private PlayerInfo playerInfo;
+
     public GameObject beamPrefab;
     private GameObject beamInst;
 
@@ -28,6 +30,8 @@ public class PlayerRespawn : MonoBehaviour
     void Awake()
     {
         rumbler = GetComponent<Rumbler>();
+
+        playerInfo = GetComponent<PlayerInfo>();
     }
 
     void OnCollisionEnter(Collision other)
@@ -56,6 +60,11 @@ public class PlayerRespawn : MonoBehaviour
     // Public methods.
     public void Respawn()
     {
+        if (playerInfo.LostGame)
+        {
+            return;
+        }
+
         IsRespawning = false;
 
         gameObject.SetActive(true);
