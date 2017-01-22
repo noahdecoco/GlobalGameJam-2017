@@ -5,14 +5,20 @@ using UnityEngine;
 public class Shockwave : MonoBehaviour {
 
 	private GameObject _caster;
+	private SphereCollider _sc;
 
 	public void SetCaster(GameObject caster){
 		_caster = caster;
 	}
 
 	public void Blast(){
-		iTween.ScaleTo(gameObject,iTween.Hash("scale",new Vector3(10,10,10),"time",1.5f,"oncomplete","destroy"));
-		iTween.FadeTo(gameObject, 0, 1.5f);
+		_sc = gameObject.GetComponent<SphereCollider>();
+		Invoke("destroy", 1.5f);
+		//iTween.ScaleTo(sc,iTween.Hash("radius",2,"time",1.5f,"oncomplete","destroy"));
+	}
+
+	void Update() {
+		//_sc.radius += 0.1f * Time.deltaTime;
 	}
 
 	void destroy () {
