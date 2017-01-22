@@ -2,12 +2,16 @@
 using System.Collections;
 using XInputDotNetPure; // Required in C#
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     // Public vars.
     public float moveSpeed = 10f;
 
     public bool useKeyboardControls = false;
+
+    public GameObject Shockwave;
+    private float rechargeTime = 1.0f;
+
 
     // Static (global) vars. Don't use globals, except for the GLOBAL GAME JAM!!!
     public static bool[] __global_ClaimedGamepadIndices = new bool[] { false, false, false, false };
@@ -33,6 +37,12 @@ public class PlayerMovement : MonoBehaviour
 	void Update ()
     {
 		HandleInput();
+
+		if(rechargeTime < 0) {
+			rechargeTime = 0;
+		} else {
+			rechargeTime -= Time.deltaTime;
+		}
 	}
 
     // Private methods.
@@ -70,6 +80,12 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             PerformInteraction();
+        }
+
+		// Interact with space bar.
+        if (Input.GetKey(KeyCode.C))
+        {
+			PerformShockwave();
         }
     }
 
@@ -146,6 +162,19 @@ public class PlayerMovement : MonoBehaviour
     // Drain/Charge interaction
     private void PerformInteraction()
     {
-        interactor.Interact();
+		interactor.Interact();
+    }
+
+	// ShockWave
+    private void PerformShockwave()
+    {
+		
+		if(rechargeTime > 0) return;
+
+		var shockwave = Instantiate(Shockwave, gameObject.transform.position, Quaternion.identity);
+		shockwave.GetComponent<Shockwave>().SetCaster(gameObject);
+		shockwave.GetComponent<Shockwave>().Blast();
+		rechargeTime = 5.0f;
+
     }
 }	
