@@ -193,22 +193,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1035300490352376, guid: a9de1290a55ae44b08f27679b130f1e0, type: 2}
-      propertyPath: m_Name
-      value: Health
-      objectReference: {fileID: 0}
-    - target: {fileID: 1371406307014812, guid: a9de1290a55ae44b08f27679b130f1e0, type: 2}
-      propertyPath: m_Name
-      value: Gems
-      objectReference: {fileID: 0}
-    - target: {fileID: 1157971392873650, guid: a9de1290a55ae44b08f27679b130f1e0, type: 2}
-      propertyPath: m_Name
-      value: Gems
-      objectReference: {fileID: 0}
-    - target: {fileID: 1200065361036484, guid: a9de1290a55ae44b08f27679b130f1e0, type: 2}
-      propertyPath: m_Name
-      value: Health
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a9de1290a55ae44b08f27679b130f1e0, type: 2}
   m_IsPrefabParent: 0
@@ -364,22 +348,22 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114561513999212242, guid: d2ff4dec4eaf558448a00f592b03526c,
+    - target: {fileID: 114620630559842406, guid: d2ff4dec4eaf558448a00f592b03526c,
         type: 2}
       propertyPath: playerGui.Array.data[0]
       value: 
       objectReference: {fileID: 1394164702}
-    - target: {fileID: 114561513999212242, guid: d2ff4dec4eaf558448a00f592b03526c,
+    - target: {fileID: 114620630559842406, guid: d2ff4dec4eaf558448a00f592b03526c,
         type: 2}
       propertyPath: playerGui.Array.data[1]
       value: 
       objectReference: {fileID: 116329358}
-    - target: {fileID: 114561513999212242, guid: d2ff4dec4eaf558448a00f592b03526c,
+    - target: {fileID: 114620630559842406, guid: d2ff4dec4eaf558448a00f592b03526c,
         type: 2}
       propertyPath: playerGui.Array.data[2]
       value: 
       objectReference: {fileID: 297881323}
-    - target: {fileID: 114561513999212242, guid: d2ff4dec4eaf558448a00f592b03526c,
+    - target: {fileID: 114620630559842406, guid: d2ff4dec4eaf558448a00f592b03526c,
         type: 2}
       propertyPath: playerGui.Array.data[3]
       value: 

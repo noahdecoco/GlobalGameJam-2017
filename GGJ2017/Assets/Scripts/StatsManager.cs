@@ -18,6 +18,9 @@ public class StatsManager : MonoBehaviour {
 			Battery battery = gameManager.ActivePlayersGameObjects[i].CrystalObject.GetComponent<Battery>();
 			battery.ChargeValueChangedEvent += OnChargeValueChanged;
 
+			Inventory inventory = gameManager.ActivePlayersGameObjects[i].PlayerObject.GetComponent<Inventory>();
+			inventory.GemValueChangedEvent += OnGemValueChanged;
+
 		}
 	}
 
@@ -26,13 +29,21 @@ public class StatsManager : MonoBehaviour {
 		UpdateCrystalHealth(playerIndex, chargeValue);
 	}
 
+	private void OnGemValueChanged(object sender, int gemValue, int playerIndex)
+	{
+		UpdateGemCount(playerIndex, gemValue);
+	}
+
 	public void UpdateCrystalHealth(int playerIndex, float crystalHealth)
 	{
 		Text healthText = playerGui[playerIndex].transform.Find("Health").GetComponent<Text>();
 		healthText.text = crystalHealth.ToString();
 	}
 
-	public void UpdateGemCount(int playerIndex, int gemCount)
+	public void UpdateGemCount(int playerIndex, int gemValue)
 	{
+		Text gemText = playerGui[playerIndex].transform.Find("Gems").GetComponent<Text>();
+		gemText.text = gemValue.ToString();
+
 	}
 }
