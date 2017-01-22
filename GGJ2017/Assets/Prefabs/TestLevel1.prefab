@@ -9201,7 +9201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d0b4f6539c8004191d47bafd9ba368, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Power: 1700
+  Power: 1500
   Range: 12
   Curve:
     serializedVersion: 2
@@ -9211,6 +9211,12 @@ MonoBehaviour:
       value: 0
       inSlope: 2
       outSlope: 2
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.10611813
+      value: 0.5908902
+      inSlope: 1.4197016
+      outSlope: 1.4197016
       tangentMode: 0
     - serializedVersion: 2
       time: 1

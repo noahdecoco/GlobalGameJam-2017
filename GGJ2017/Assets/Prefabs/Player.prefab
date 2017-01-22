@@ -82,6 +82,7 @@ MonoBehaviour:
   - {fileID: 1006113477236000, guid: 7f7c104c54a2a3a4d8e450903cd60af0, type: 2}
   - {fileID: 1376936951187374, guid: 07a1016bd68ab4c459f582dbf7665189, type: 2}
   - {fileID: 1440999808495314, guid: bf276aa053134204a86c7eb019ee4254, type: 2}
+  WizardModel: {fileID: 0}
 --- !u!114 &114072415433561756
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -120,7 +121,7 @@ MonoBehaviour:
   ChargeDistance: 4
   ChargePercentagePerSecond: 0.25
   DrainDistance: 4
-  DrainPercentagePerSecond: 0.25
+  DrainPercentagePerSecond: 0.1
 --- !u!114 &114242447519328052
 MonoBehaviour:
   m_ObjectHideFlags: 1
