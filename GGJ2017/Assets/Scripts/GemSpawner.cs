@@ -18,8 +18,28 @@ public class GemSpawner : MonoBehaviour
 
     private PlatformManager platformManager;
 
+    private float[] ringDistances = new float[6]
+    {
+        0f, // ring 1 obsolete
+        6.609f,
+        9.697f,
+        13.240f,
+        16.945f,
+        21.161f
+    };
+
+    private float[] ringThicknesses = new float[6]
+    {
+        0f, // ring 1 obsolete
+        2.023f,
+        4.154f,
+        2.920f,
+        4.501f,
+        3.942f
+    };
+
     // Unity callbacks.
-	void Start()
+    void Start()
     {
         platformManager = GetComponent<PlatformManager>();
 
@@ -43,19 +63,37 @@ public class GemSpawner : MonoBehaviour
 
     private void SpawnGem()
     {
-        // pick platform
+        // Pick platform.
         int index = (int)(Random.value * platformManager.Platforms.Count);
 
         GameObject platform = platformManager.Platforms[index];
 
-        // pick position offset
-        float angle = 0f;
+        // Calculate position offset.
+        GameObject ringObject = platform.transform.parent.gameObject;
 
-        float distance = 10f;
+        int ring = int.Parse(ringObject.name[ringObject.name.Length - 1].ToString());
 
-        // instantiate
+        float angleVariation = ring <= 2 ? (360f / 8f) : (360f / 16f);
+
+        float angleVariationPercentage = Random.Range(0.05f, 0.95f);
+
+        float angle = -90f - float.Parse(platform.name) - (angleVariation * angleVariationPercentage);
+
+        float distanceVariation = Random.Range(-0.45f, 0.45f);
+
+        float distance = ringDistances[ring - 1] + (distanceVariation * ringThicknesses[ring - 1]);
+
+        var x = distance * Mathf.Cos(angle * Mathf.Deg2Rad);
+
+        var z = distance * Mathf.Sin(angle * Mathf.Deg2Rad);
+
+        // Spawn gem.
         GameObject newGem = GameObject.Instantiate(GemPrefab);
 
-        newGem.transform.position = new Vector3(0f, 0f, 0f);
+        newGem.transform.position = new Vector3(x, 0f, z);
+
+        newGem.transform.parent = platform.transform;
+
+        activeGems.Add(newGem);
     }
 }

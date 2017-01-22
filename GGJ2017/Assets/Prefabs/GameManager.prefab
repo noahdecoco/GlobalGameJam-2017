@@ -53,7 +53,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ef0dd9e0cb2e82499c095ae27d84f28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxGemCount: 100
+  MaxGemCount: 30
   AverageTimeBetweenGemWaves: 10
   VariationInTimeBetweenGemWaves: 1
   GemPrefab: {fileID: 1142014851067306, guid: b3c9a9aa65f07dc4b8bb4c2f70b6a00b, type: 2}
