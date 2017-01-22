@@ -9,12 +9,11 @@ public class PlayerController : MonoBehaviour
 
     public bool useKeyboardControls = false;
 
-    public GameObject Shockwave;
+    public float stunTime = 2f;
 
-	// Private vars.
-    private float rechargeTime = 3.0f;
+    public GameObject stunPrefab;
 
-    private Animator animator;
+    public PlayerIndex GamepadIndex;
 
     // Static (global) vars. Don't use globals, except for the GLOBAL GAME JAM!!!
     public static bool[] __global_ClaimedGamepadIndices = new bool[] { false, false, false, false };
@@ -22,23 +21,26 @@ public class PlayerController : MonoBehaviour
     // Input vars.
     private bool gamepadIndexSet = false;
 
-    public PlayerIndex GamepadIndex;
-
-    private Rumbler rumbler;
-
     private GamePadState state;
 
     private GamePadState prevState;
 
     // Component reference vars.
     private Interactor interactor;
+    
+    private Rumbler rumbler;
+
+    private Shocker shocker;
+
+    private Inventory inventory;
+
+    // Stun vars.
+    private Animator animator;
 
     private bool isStunned;
 
-    public float stunTime = 2f;
     private float stunCooldown = 0f;
 
-    public GameObject stunPrefab;
     private GameObject stunInst;
 
     // Unity callbacks.
@@ -50,6 +52,10 @@ public class PlayerController : MonoBehaviour
 
         rumbler = GetComponent<Rumbler>();
 
+        shocker = GetComponent<Shocker>();
+
+        inventory = GetComponent<Inventory>();
+
         isStunned = false;
     }
 	
@@ -57,21 +63,13 @@ public class PlayerController : MonoBehaviour
     {
 		HandleInput();
 
-		if (rechargeTime < 0)
+        if (isStunned == true)
         {
-			rechargeTime = 0;
-		}
-        else
-        {
-			rechargeTime -= Time.deltaTime;
-		}
-
-        if(isStunned == true)
-        {
-            if(stunCooldown > 0)
+            if (stunCooldown > 0)
             {
                 stunCooldown -= Time.deltaTime;
-                if(stunCooldown < 0)
+
+                if (stunCooldown < 0)
                 {
                     RemoveStun();
                 }
@@ -82,8 +80,11 @@ public class PlayerController : MonoBehaviour
     // Private methods.
     private void HandleInput()
     {
-        if (isStunned) return;
-
+        if (isStunned)
+        {
+            return;
+        }
+        
         if (useKeyboardControls)
         {
             HandleKeyboardInput();
@@ -239,19 +240,12 @@ public class PlayerController : MonoBehaviour
     // ShockWave
     private void PerformShockwave()
     {
-        if (rechargeTime > 0)
+        if (shocker.CanShock(inventory))
         {
-            return;
+            shocker.Shock(inventory);
+
+            rumbler.SetFadingRumbleOverTime(1f, 0.25f, 0.25f);
         }
-        
-        rumbler.SetFadingRumbleOverTime(1f, 0.25f, 0.25f);
-
-        var shockwave = Instantiate(Shockwave, gameObject.transform.position, Quaternion.identity);
-
-		shockwave.GetComponent<Shockwave>().SetCaster(gameObject);
-		shockwave.GetComponent<Shockwave>().Blast();
-
-		rechargeTime = 3.0f;
     }
     
 	private void SetPlayerIdle()

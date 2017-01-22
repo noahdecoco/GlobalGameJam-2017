@@ -6,6 +6,12 @@ public class Inventory : MonoBehaviour
 {
     // Private vars.
     private Dictionary<string, int> inventory = new Dictionary<string, int>();
+
+    // Unity callbacks.
+    void Start()
+    {
+        inventory["Gem"] = 0;
+    }
     
     // Public methods.
     public int Count(string name)
@@ -25,7 +31,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void Drop(string name, int amount)
+    public void Remove(string name, int amount)
     {
         if (inventory.ContainsKey(name) && inventory[name] >= amount)
         {
