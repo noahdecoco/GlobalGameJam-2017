@@ -90,10 +90,23 @@ public class GemSpawner : MonoBehaviour
         // Spawn gem.
         GameObject newGem = GameObject.Instantiate(GemPrefab);
 
-        newGem.transform.position = new Vector3(x, 0f, z);
+        newGem.transform.position = new Vector3(x, platform.transform.position.y, z);
 
         newGem.transform.parent = platform.transform;
 
+        // Listen for picked up event.
+        Pickup.PickedUpEvent += OnPickedUp;
+
+        // Keep track.
         activeGems.Add(newGem);
+    }
+
+    private void OnPickedUp(object sender, GameObject gameObject, string pickupName, int pickupCount)
+    {
+        if (pickupName == "Gem"
+            && activeGems.Contains(gameObject))
+        {
+            activeGems.Remove(gameObject);
+        }
     }
 }

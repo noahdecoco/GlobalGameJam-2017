@@ -6,6 +6,11 @@ public class Inventory : MonoBehaviour {
 
     private Dictionary<string, int> inventory = new Dictionary<string, int>();
 
+    public int Count(string name)
+    {
+        return inventory[name];
+    }
+
     public void Add(string name, int amount)
     {
         if (inventory.ContainsKey(name))
@@ -35,14 +40,4 @@ public class Inventory : MonoBehaviour {
             otherInventory.Add(name, amount);
         }
     }
-
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }
