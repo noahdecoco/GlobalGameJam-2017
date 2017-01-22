@@ -199,9 +199,12 @@ public class PlayerController : MonoBehaviour
     // Drain/Charge interaction
     private void PerformInteraction()
     {
-		interactor.Interact();
+		bool interactionOccurred = interactor.Interact();
 
-		animator.SetTrigger("magic");
+        if (interactionOccurred)
+        {
+            animator.SetTrigger("magic");
+        }
     }
 
     private void StopInteraction()

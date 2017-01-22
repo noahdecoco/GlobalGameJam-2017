@@ -25,4 +25,8 @@ public class PlayerInfo : MonoBehaviour
     }
 
     private int playerIndex = -1;
+
+    public bool LostGame = false;
+
+    public bool WonGame = false;
 }

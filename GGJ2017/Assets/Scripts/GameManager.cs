@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
 
     private StatsManager statsManager;
 
+    private int numberOfPlayers;
+
     // Unity callbacks.
     void Start()
     {
@@ -34,13 +36,15 @@ public class GameManager : MonoBehaviour
 
         // TODO: Decide how many players are playing.
         StartGame(4);
-        initStatsManager();
 
+        initStatsManager();
     }
 
     // Public methods.
     public void StartGame(int numberOfPlayers)
     {
+        this.numberOfPlayers = numberOfPlayers;
+
         GameObject[] spawnPointsToUse =
             numberOfPlayers == 2 ? spawnPoints.twoPlayers :
             numberOfPlayers == 3 ? spawnPoints.threePlayers :
@@ -87,23 +91,56 @@ public class GameManager : MonoBehaviour
 	private void initStatsManager()
 	{
 		print("init");
+
 		statsManager.Initialise();
 	}
 
     public void EndGame()
     {
-        // dont know yet
+        for (int i = 0; i < numberOfPlayers; ++i)
+        {
+            var playerObject = ActivePlayersGameObjects[i].PlayerObject;
+
+            var crystalObject = ActivePlayersGameObjects[i].CrystalObject;
+
+            var playerInfo = playerObject.GetComponent<PlayerInfo>();
+
+            // Determine winner.
+            if (!playerInfo.LostGame)
+            {
+                playerInfo.WonGame = true;
+
+                Debug.Log(playerInfo.PlayerIndex + " has won the game!");
+            }
+
+            // Unsubscribe from events.
+            Battery battery = crystalObject.GetComponent<Battery>();
+
+            battery.ChargeDrainedEvent -= OnChargeDrained;
+
+            // TODO: Destroy objects.
+            // TODO: Empty active players.
+            // TODO: Show game over screen.
+        }
     }
 
     // Private methods.
     private void OnChargeDrained(object sender, CrystalInfo crystalInfo)
     {
         PermaKill(crystalInfo.PlayerIndex);
+
+        if (--numberOfPlayers <= 1)
+        {
+            Debug.Log("one charge drained, numberOfPlayers: " + numberOfPlayers);
+            EndGame();
+        }
     }
 
     private void PermaKill(int playerIndex)
     {
         ActivePlayersGameObjects[playerIndex].PlayerObject.SetActive(false);
         ActivePlayersGameObjects[playerIndex].CrystalObject.SetActive(false);
+
+        ActivePlayersGameObjects[playerIndex].PlayerObject.GetComponent<PlayerInfo>().LostGame = true;
     }
 }

@@ -19,7 +19,4 @@ public class StatsManager : MonoBehaviour {
 			print(gameManager.ActivePlayersGameObjects[i].CrystalObject.GetComponent<Battery>().ChargeValue);
 		}
 	}
-
-
-
 }

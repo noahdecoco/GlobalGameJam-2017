@@ -18,6 +18,14 @@ public class Battery : MonoBehaviour
     // Public vars.
     public float ChargeValue { get { return chargeValue; } }
 
+    public bool IsFullyCharged
+    {
+        get
+        {
+            return chargeValue >= 1f;
+        }
+    }
+
     // Private vars.
     private CrystalInfo crystalInfo;
 
@@ -45,6 +53,11 @@ public class Battery : MonoBehaviour
     // Public methods.
     public void Charge(float percentage)
     {
+        if (chargeValue >= 1f)
+        {
+            return;
+        }
+
         chargeValue += percentage;
 
         // Don't go over 100%.
@@ -55,6 +68,11 @@ public class Battery : MonoBehaviour
 
     public void Drain(float percentage)
     {
+        if (chargeValue <= 0f)
+        {
+            return;
+        }
+
         chargeValue -= percentage;
 
         // Don't go under 0%.
@@ -70,13 +88,6 @@ public class Battery : MonoBehaviour
 
     public bool IsFriendlyWith(PlayerInfo somePlayerInfo)
     {
-        //PlayerInfo playerInfo = otherObject.GetComponent<PlayerInfo>();
-
-        if (somePlayerInfo)
-        {
-            Debug.Log(somePlayerInfo.gameObject.name + " has index " + somePlayerInfo.PlayerIndex + ", crystal has index " + crystalInfo.PlayerIndex);
-        }
-
         if (somePlayerInfo
             && somePlayerInfo.PlayerIndex == crystalInfo.PlayerIndex)
         {
@@ -97,7 +108,8 @@ public class Battery : MonoBehaviour
         {
             float d = Vector3.Distance(b.transform.position, position);
 
-            if (d < distance 
+            if (b.gameObject.activeSelf
+                && d < distance 
                 && d < shortestDistance)
             {
                 shortestDistance = d;
