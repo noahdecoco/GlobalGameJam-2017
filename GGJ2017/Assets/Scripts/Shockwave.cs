@@ -28,8 +28,9 @@ public class Shockwave : MonoBehaviour {
 	void OnTriggerEnter(Collider other){
 		
 		if(other.gameObject != _caster){
-
+			
 			Vector3 dir = other.transform.position - _caster.transform.position;
+			print(dir);
 			other.GetComponent<Rigidbody>().AddForce(dir * 50000);
 
 		}

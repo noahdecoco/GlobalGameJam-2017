@@ -174,7 +174,7 @@ public class PlayerController : MonoBehaviour
 		var shockwave = Instantiate(Shockwave, gameObject.transform.position, Quaternion.identity);
 		shockwave.GetComponent<Shockwave>().SetCaster(gameObject);
 		shockwave.GetComponent<Shockwave>().Blast();
-		rechargeTime = 5.0f;
+		rechargeTime = 1.0f;
 
     }
 }	
