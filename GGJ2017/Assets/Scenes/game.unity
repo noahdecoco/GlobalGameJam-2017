@@ -198,7 +198,7 @@ GameObject:
   m_PrefabInternal: {fileID: 92391730}
 --- !u!1 &92391732 stripped
 GameObject:
-  m_PrefabParentObject: {fileID: 1268410518534346, guid: a9de1290a55ae44b08f27679b130f1e0,
+  m_PrefabParentObject: {fileID: 1980860596322018, guid: a9de1290a55ae44b08f27679b130f1e0,
     type: 2}
   m_PrefabInternal: {fileID: 92391730}
 --- !u!1 &92391733 stripped
@@ -383,12 +383,12 @@ Prefab:
         type: 2}
       propertyPath: playerGui.Array.data[3]
       value: 
-      objectReference: {fileID: 92391732}
+      objectReference: {fileID: 92391731}
     - target: {fileID: 114244104594590720, guid: d2ff4dec4eaf558448a00f592b03526c,
         type: 2}
       propertyPath: startGUI
       value: 
-      objectReference: {fileID: 92391731}
+      objectReference: {fileID: 92391732}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d2ff4dec4eaf558448a00f592b03526c, type: 2}
   m_IsPrefabParent: 0
