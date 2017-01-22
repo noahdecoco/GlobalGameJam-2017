@@ -42,7 +42,11 @@ public class GemSpawner : MonoBehaviour
     void Start()
     {
         platformManager = GetComponent<PlatformManager>();
+    }
 
+    // Public methods.
+    public void StartGame()
+    {
         SpawnGemWave();
     }
 

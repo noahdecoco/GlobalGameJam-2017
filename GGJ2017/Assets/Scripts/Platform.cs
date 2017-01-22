@@ -23,78 +23,110 @@ public class Platform : MonoBehaviour
     private static float dropDistance = 30f;
 
     // Private vars.
-    private float _timeToShake;
+    private float timeToShake;
 
-	private float _timeToRise;
+	private float timeToRise;
 
     private float dropTimer;
 
-    private bool _isSteady = true;
+    private bool isSteady = true;
 
-	private MeshRenderer _meshRend;
+    private bool performedStartGameAnimation = false;
 
-	private Color _color;
+    private MeshRenderer meshRenderer;
 
-	void Start () {
-		
-		_meshRend = GetComponent<MeshRenderer>();
-		_color = _meshRend.material.color;
+    // Unity callbacks.
+	void Start ()
+    {
+		meshRenderer = GetComponent<MeshRenderer>();
 
-		float delay = Random.Range(1.0f,3.0f);
-		iTween.MoveFrom(gameObject,iTween.Hash("y",-10,"time",3,"delay",delay));
-		iTween.FadeFrom(gameObject,iTween.Hash("a",0,"time",2,"delay",delay));
-		resetTimers();
-
+		ResetTimers();
 	}
 
-	void Update () {
-
-		updateState();
-
+	void Update ()
+    {
+		UpdateState();
 	}
 
-	void resetTimers(){
+    // Public methods.
+    public void PerformStartGameAnimation()
+    {
+        float delay = Random.Range(1.0f, 3.0f);
 
-		_timeToShake = Random.Range(10.0f, 40.0f);
+        iTween.MoveFrom(gameObject, iTween.Hash("y", -10, "time", 3, "delay", delay));
+        iTween.FadeFrom(gameObject, iTween.Hash("a", 0, "time", 2, "delay", delay));
+
+        performedStartGameAnimation = true;
+    }
+
+    // Private methods.
+	private void ResetTimers()
+    {
+		timeToShake = Random.Range(10.0f, 40.0f);
+
 		dropTimer = timeToDrop;
-		_timeToRise = Random.Range(3.0f, 6.0f);
 
+		timeToRise = Random.Range(3.0f, 6.0f);
 	}
 
-	void updateState(){
+    private void UpdateState()
+    {
+        if (!performedStartGameAnimation)
+        {
+            return;
+        }
 
-		if(_isSteady) {
-			_timeToShake -= Time.deltaTime;
-			if(_timeToShake < 0) {
-				_isSteady = false;
+		if (isSteady)
+        {
+			timeToShake -= Time.deltaTime;
+
+			if (timeToShake < 0)
+            {
+				isSteady = false;
+
 				IsShaking = true;	
 			}
+
 			return;
 		}
 
-		if(IsShaking) {
+		if (IsShaking)
+        {
 			transform.position = new Vector3(0, Random.Range(-0.5f, 0.0f), 0);
+
 			dropTimer -= Time.deltaTime;
-			if(dropTimer < 0) {
+
+			if (dropTimer < 0)
+            {
 				IsShaking = false;
+
 				IsDropped = true;
+
 				iTween.MoveTo(gameObject, new Vector3(0, -dropDistance, 0), 2);
+
 				iTween.FadeTo(gameObject, 0, 0.5f);
 			}
+
 			return;
 		}
 
-		if(IsDropped) {
-			_timeToRise -= Time.deltaTime;
-			if(_timeToRise < 0) {
+		if (IsDropped)
+        {
+			timeToRise -= Time.deltaTime;
+
+			if (timeToRise < 0)
+            {
 				IsDropped = false;
-				_isSteady = true;
-				resetTimers();
+
+				isSteady = true;
+
+				ResetTimers();
+
 				iTween.MoveTo(gameObject, new Vector3(0,0,0), 2);
 				iTween.FadeTo(gameObject, 1, 0.8f);
 			}
+
 			return;
 		}
-
 	}
 }

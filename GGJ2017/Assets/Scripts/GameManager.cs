@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
 		statsManager = GetComponent<StatsManager>();
 
         // TODO: Decide how many players are playing.
-        StartGame(4);
+        //StartGame(4);
     }
 
     // Public methods.
