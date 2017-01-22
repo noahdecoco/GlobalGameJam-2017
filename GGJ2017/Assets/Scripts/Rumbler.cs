@@ -5,13 +5,20 @@ using XInputDotNetPure; // Required in C#
 
 public class Rumbler : MonoBehaviour
 {
-    public void SetRumble(PlayerIndex playerIndex, float lowRumble, float highRumble)
+    private PlayerController playerController;
+
+    void Awake()
     {
-        GamePad.SetVibration(playerIndex, lowRumble, highRumble);
+        playerController = GetComponent<PlayerController>();
     }
 
-    public void StopRumble(PlayerIndex playerIndex)
+    public void SetRumble(float lowRumble, float highRumble)
     {
-        GamePad.SetVibration(playerIndex, 0f, 0f);
+        GamePad.SetVibration(playerController.GamepadIndex, lowRumble, highRumble);
+    }
+
+    public void StopRumble()
+    {
+        GamePad.SetVibration(playerController.GamepadIndex, 0f, 0f);
     }
 }

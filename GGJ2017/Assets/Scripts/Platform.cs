@@ -2,17 +2,37 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Platform : MonoBehaviour {
+public class Platform : MonoBehaviour
+{
+    // Public vars.
+    public bool IsShaking = false;
 
-	private float _timeToShake;
-	private float _timeToDrop;
+    public bool IsDropped = false;
+
+    public float DropTimerPercentageElapsed
+    {
+        get
+        {
+            return dropTimer / timeToDrop;
+        }
+    }
+
+    // Static vars.
+    private static float timeToDrop = 2f;
+
+    private static float dropDistance = 20f;
+
+    // Private vars.
+    private float _timeToShake;
+
 	private float _timeToRise;
 
-	private bool _isSteady = true;
-	private bool _isShaking = false;
-	private bool _isDropped = false;
+    private float dropTimer;
+
+    private bool _isSteady = true;
 
 	private MeshRenderer _meshRend;
+
 	private Color _color;
 
 	void Start () {
@@ -36,7 +56,7 @@ public class Platform : MonoBehaviour {
 	void resetTimers(){
 
 		_timeToShake = Random.Range(10.0f, 40.0f);
-		_timeToDrop = 2.0f;
+		dropTimer = timeToDrop;
 		_timeToRise = Random.Range(3.0f, 6.0f);
 
 	}
@@ -47,27 +67,27 @@ public class Platform : MonoBehaviour {
 			_timeToShake -= Time.deltaTime;
 			if(_timeToShake < 0) {
 				_isSteady = false;
-				_isShaking = true;	
+				IsShaking = true;	
 			}
 			return;
 		}
 
-		if(_isShaking) {
+		if(IsShaking) {
 			transform.position = new Vector3(0, Random.Range(-0.5f, 0.0f), 0);
-			_timeToDrop -= Time.deltaTime;
-			if(_timeToDrop < 0) {
-				_isShaking = false;
-				_isDropped = true;
-				iTween.MoveTo(gameObject, new Vector3(0,-10,0), 2);
+			dropTimer -= Time.deltaTime;
+			if(dropTimer < 0) {
+				IsShaking = false;
+				IsDropped = true;
+				iTween.MoveTo(gameObject, new Vector3(0, -dropDistance, 0), 2);
 				iTween.FadeTo(gameObject, 0, 0.5f);
 			}
 			return;
 		}
 
-		if(_isDropped) {
+		if(IsDropped) {
 			_timeToRise -= Time.deltaTime;
 			if(_timeToRise < 0) {
-				_isDropped = false;
+				IsDropped = false;
 				_isSteady = true;
 				resetTimers();
 				iTween.MoveTo(gameObject, new Vector3(0,0,0), 2);
