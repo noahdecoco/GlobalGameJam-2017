@@ -10,8 +10,10 @@ public class PlayerController : MonoBehaviour
     public bool useKeyboardControls = false;
 
     public GameObject Shockwave;
-    private float rechargeTime = 1.0f;
 
+	// Private vars.
+    private float rechargeTime = 3.0f;
+    private Animator animator;
 
     // Static (global) vars. Don't use globals, except for the GLOBAL GAME JAM!!!
     public static bool[] __global_ClaimedGamepadIndices = new bool[] { false, false, false, false };
@@ -32,6 +34,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         interactor = GetComponent<Interactor>();
+		animator = transform.GetChild(0).GetComponent<Animator>();
     }
 	
 	void Update ()
@@ -73,8 +76,12 @@ public class PlayerController : MonoBehaviour
 
         // Move with WASD.
         var direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
+        if(direction != new Vector3(0,0,0)){
+			PerformMovement(direction);
+        } else {
+        	setPlayerIdle();
+        };
 
-        PerformMovement(direction);
 
         // Interact with space bar.
         if (Input.GetKey(KeyCode.Space))
@@ -137,8 +144,11 @@ public class PlayerController : MonoBehaviour
 
             // Move with left thumbstick.
             var direction = new Vector3(state.ThumbSticks.Left.X, 0f, state.ThumbSticks.Left.Y);
-
-            PerformMovement(direction);
+			if(direction != new Vector3(0,0,0)){
+				PerformMovement(direction);
+	        } else {
+	        	setPlayerIdle();
+	        };
 
             // Interact with A button.
             if (state.Buttons.A == ButtonState.Pressed)
@@ -163,12 +173,15 @@ public class PlayerController : MonoBehaviour
         transform.LookAt(transform.position + direction);
 
         transform.eulerAngles = new Vector3(0f, transform.eulerAngles.y, 0f);
+
+        animator.SetTrigger("walk");
     }
 
     // Drain/Charge interaction
     private void PerformInteraction()
     {
 		interactor.Interact();
+		animator.SetTrigger("magic");
     }
 
 	// ShockWave
@@ -177,10 +190,15 @@ public class PlayerController : MonoBehaviour
 		
 		if(rechargeTime > 0) return;
 
-		var shockwave = Instantiate(Shockwave, gameObject.transform.position + new Vector3(0,1,0), Quaternion.identity);
+		var shockwave = Instantiate(Shockwave, gameObject.transform.position, Quaternion.identity);
 		shockwave.GetComponent<Shockwave>().SetCaster(gameObject);
 		shockwave.GetComponent<Shockwave>().Blast();
-		rechargeTime = 1.0f;
+		rechargeTime = 3.0f;
 
     }
+
+	private void setPlayerIdle()
+	{
+		animator.SetTrigger("idle");
+	}
 }	

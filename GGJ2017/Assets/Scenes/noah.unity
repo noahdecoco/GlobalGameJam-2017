@@ -176,10 +176,6 @@ Prefab:
       propertyPath: m_Name
       value: Level
       objectReference: {fileID: 0}
-    - target: {fileID: 1058821126422686, guid: 3977497e27f0eec44b26f0e650c59701, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3977497e27f0eec44b26f0e650c59701, type: 2}
   m_IsPrefabParent: 0
@@ -273,15 +269,6 @@ Prefab:
     - target: {fileID: 4317471693232156, guid: 8433bda178e8bb24794b8222358ea72a, type: 2}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 20440195076591810, guid: 8433bda178e8bb24794b8222358ea72a,
-        type: 2}
-      propertyPath: field of view
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 4317471693232156, guid: 8433bda178e8bb24794b8222358ea72a, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 48
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8433bda178e8bb24794b8222358ea72a, type: 2}
