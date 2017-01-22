@@ -46,6 +46,8 @@ public class GameManager : MonoBehaviour
         platformManager = GetComponent<PlatformManager>();
 
         gemSpawner = GetComponent<GemSpawner>();
+
+        statsManager.Initialize();
     }
 
     void Update()
@@ -109,7 +111,7 @@ public class GameManager : MonoBehaviour
             newPlayer.SetActive(false);
         }
 
-        statsManager.Initialise();
+        statsManager.StartGame();
 
         platformManager.PerformStartGameAnimation();
 
