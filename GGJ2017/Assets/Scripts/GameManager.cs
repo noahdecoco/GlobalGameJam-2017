@@ -16,20 +16,26 @@ public class GameManager : MonoBehaviour
 
     public GameObject PlayerPrefab;
 
-    public GameObject LevelObject;
+	public GameObject LevelObject;
+
+    public PlayerGameObjects[] ActivePlayersGameObjects = new PlayerGameObjects[4];
 
     // Private vars.
     private SpawnPoints spawnPoints;
 
-    private PlayerGameObjects[] activePlayersGameObjects = new PlayerGameObjects[4];
+    private StatsManager statsManager;
 
     // Unity callbacks.
     void Start()
     {
         spawnPoints = LevelObject.GetComponent<SpawnPoints>();
 
+		statsManager = GetComponent<StatsManager>();
+
         // TODO: Decide how many players are playing.
         StartGame(4);
+        initStatsManager();
+
     }
 
     // Public methods.
@@ -73,10 +79,16 @@ public class GameManager : MonoBehaviour
             newBattery.ChargeDrainedEvent += OnChargeDrained;
 
             // Keep track of active players.
-            activePlayersGameObjects[i].PlayerObject = newPlayer;
-            activePlayersGameObjects[i].CrystalObject = newCrystal;
+            ActivePlayersGameObjects[i].PlayerObject = newPlayer;
+            ActivePlayersGameObjects[i].CrystalObject = newCrystal;
         }
     }
+
+	private void initStatsManager()
+	{
+		print("init");
+		statsManager.Initialise();
+	}
 
     public void EndGame()
     {
@@ -91,7 +103,7 @@ public class GameManager : MonoBehaviour
 
     private void PermaKill(int playerIndex)
     {
-        activePlayersGameObjects[playerIndex].PlayerObject.SetActive(false);
-        activePlayersGameObjects[playerIndex].CrystalObject.SetActive(false);
+        ActivePlayersGameObjects[playerIndex].PlayerObject.SetActive(false);
+        ActivePlayersGameObjects[playerIndex].CrystalObject.SetActive(false);
     }
 }
