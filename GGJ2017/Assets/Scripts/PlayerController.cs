@@ -43,6 +43,8 @@ public class PlayerController : MonoBehaviour
 
     private GameObject stunInst;
 
+    private GameObject beamOrigin;
+
     // Unity callbacks.
     void Start()
     {
@@ -57,6 +59,8 @@ public class PlayerController : MonoBehaviour
         inventory = GetComponent<Inventory>();
 
         isStunned = false;
+
+        beamOrigin = transform.FindChild("BeamOrigin").gameObject;
     }
 	
 	void Update ()
@@ -229,12 +233,15 @@ public class PlayerController : MonoBehaviour
         if (interactionOccurred)
         {
             animator.SetTrigger("magic");
+            beamOrigin.SetActive(true);
         }
+        
     }
 
     private void StopInteraction()
     {
         interactor.StopInteract();
+        beamOrigin.SetActive(false);
     }
 
     // ShockWave

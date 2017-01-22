@@ -46,6 +46,8 @@ public class GameManager : MonoBehaviour
         platformManager = GetComponent<PlatformManager>();
 
         gemSpawner = GetComponent<GemSpawner>();
+
+        statsManager.Initialize();
     }
 
     void Update()
@@ -95,7 +97,7 @@ public class GameManager : MonoBehaviour
 
             playerRespawn.RespawnPoint = spawnPointsToUse[i];
 
-            playerRespawn.Respawn();
+            //playerRespawn.Respawn();
 
             // Listen for battery charge drained event (loss condition).
             Battery newBattery = newCrystal.GetComponent<Battery>();
@@ -105,13 +107,15 @@ public class GameManager : MonoBehaviour
             // Keep track of active players.
             ActivePlayersGameObjects[i].PlayerObject = newPlayer;
             ActivePlayersGameObjects[i].CrystalObject = newCrystal;
+
+            newPlayer.SetActive(false);
         }
 
-        gemSpawner.StartSpawning();
-
-        statsManager.Initialise();
+        statsManager.StartGame();
 
         platformManager.PerformStartGameAnimation();
+
+        Invoke("StartGameplay", 4f);
     }
 
     public void EndGame()
@@ -181,5 +185,15 @@ public class GameManager : MonoBehaviour
         }
 
         return false;
+    }
+
+    private void StartGameplay()
+    {
+        for (int i = 0; i < totalPlayerCount; ++i)
+        {
+            ActivePlayersGameObjects[i].PlayerObject.GetComponent<PlayerRespawn>().Respawn();
+        }
+
+        gemSpawner.StartSpawning();
     }
 }
