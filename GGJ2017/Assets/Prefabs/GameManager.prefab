@@ -20,6 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4176719640711674}
   - component: {fileID: 114927753642528294}
+  - component: {fileID: 114088177467510550}
+  - component: {fileID: 114197951572359198}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -40,6 +42,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114088177467510550
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1614185389961470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ef0dd9e0cb2e82499c095ae27d84f28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxGemCount: 30
+  AverageTimeBetweenGemWaves: 10
+  VariationInTimeBetweenGemWaves: 1
+  GemPrefab: {fileID: 1142014851067306, guid: b3c9a9aa65f07dc4b8bb4c2f70b6a00b, type: 2}
+--- !u!114 &114197951572359198
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1614185389961470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3328b4e9eec7346f6a2fe6474182772e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Platforms: []
 --- !u!114 &114927753642528294
 MonoBehaviour:
   m_ObjectHideFlags: 1

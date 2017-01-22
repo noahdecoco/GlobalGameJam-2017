@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     private PlayerGameObjects[] activePlayersGameObjects = new PlayerGameObjects[4];
 
     // Unity callbacks.
-    void Start ()
+    void Start()
     {
         spawnPoints = LevelObject.GetComponent<SpawnPoints>();
 
