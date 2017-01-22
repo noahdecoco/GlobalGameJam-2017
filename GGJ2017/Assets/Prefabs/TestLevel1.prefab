@@ -493,6 +493,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1240249034559244
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4186725904911812}
+  - component: {fileID: 114015762962156990}
+  m_Layer: 0
+  m_Name: BlackholeAttractor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1251896195821124
 GameObject:
   m_ObjectHideFlags: 0
@@ -2110,6 +2126,19 @@ Transform:
   m_Father: {fileID: 4603051755929186}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 157.5}
+--- !u!4 &4186725904911812
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1240249034559244}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4206151684028718}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4195978403788672
 Transform:
   m_ObjectHideFlags: 1
@@ -2143,6 +2172,7 @@ Transform:
   - {fileID: 4603051755929186}
   - {fileID: 4872838063148560}
   - {fileID: 4594463629875750}
+  - {fileID: 4186725904911812}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9091,6 +9121,19 @@ Light:
   m_BounceIntensity: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114015762962156990
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1240249034559244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8d0b4f6539c8004191d47bafd9ba368, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Power: 2000
+  Range: 12
 --- !u!114 &114033271954380642
 MonoBehaviour:
   m_ObjectHideFlags: 1

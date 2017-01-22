@@ -33,7 +33,7 @@ public class Battery : MonoBehaviour
 
         crystalInfo = GetComponent<CrystalInfo>();
     }
-
+    
     void OnDestroy()
     {
         if (__global_Batteries.Contains(this))

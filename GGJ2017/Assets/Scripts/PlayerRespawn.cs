@@ -7,8 +7,14 @@ public class PlayerRespawn : MonoBehaviour
     // Static global vars.
     public static Vector3 __global_PlayerSpawnOffset = new Vector3(2f, 0f, 2f);
 
+    // Events.
+    public delegate void PlayerWaitingForRespawnHandler(object sender, GameObject gameObject, float respawnTime);
+    public event PlayerWaitingForRespawnHandler PlayerWaitingForRespawnEvent;
+
     // Public vars.
     public GameObject RespawnPoint;
+
+    public bool IsRespawning = false;
     
     // Private vars.
     private float respawnTime = 5.0f;
@@ -23,12 +29,18 @@ public class PlayerRespawn : MonoBehaviour
             gameObject.SetActive(false);
 
             Invoke("Respawn", respawnTime);
+
+            IsRespawning = true;
+
+            PlayerWaitingForRespawnEvent(this, gameObject, respawnTime);
         }
  	}
 
     // Public methods.
     public void Respawn()
     {
+        IsRespawning = false;
+
         gameObject.SetActive(true);
 
         // The magic number here is a percentage of the vector between the 

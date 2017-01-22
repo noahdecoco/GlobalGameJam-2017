@@ -4,14 +4,32 @@ using UnityEngine;
 
 public class Attractor : MonoBehaviour
 {
+    // Public vars.
+    public float Power = 1000f;
 
-	// Use this for initialization
-	void Start () {
+    public float Range = 7f;
+
+    // Unity callbacks.
+    void Start () {
 		
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
+	void Update ()
+    {
+		foreach (Attractable a in Attractable.__global_Attractables)
+        {
+            var direction = transform.position - a.transform.position;
+
+            var distance = direction.magnitude;
+
+            if (distance < Range)
+            {
+                var distancePercentage = distance / Range;
+
+                a.GetComponent<Rigidbody>().AddForce(direction.normalized * Power * (1f - distancePercentage));
+
+                Debug.Log("WIOW");
+            }
+        }
 	}
 }

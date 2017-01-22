@@ -30,7 +30,6 @@ public class Shockwave : MonoBehaviour {
 		if(other.gameObject != _caster){
 			
 			Vector3 dir = other.transform.position - _caster.transform.position;
-			print(dir);
 			other.GetComponent<Rigidbody>().AddForce(dir.normalized * 50000);
 
 		}
