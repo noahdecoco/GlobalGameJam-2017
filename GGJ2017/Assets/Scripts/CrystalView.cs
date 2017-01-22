@@ -21,6 +21,10 @@ public class CrystalView : MonoBehaviour
 
     private static float crystalLightMaxExtraRange = 25f;
 
+    private static float crystalBaseScale = 1.908349f;
+
+    private static float crystalExtraScale = 0.5f;
+
     // Private vars.
     private Battery battery;
 
@@ -32,6 +36,8 @@ public class CrystalView : MonoBehaviour
 
     private ParticleSystem crystalFlares;
 
+    private Transform offsets;
+
     // Unity callbacks.
     void Start ()
     {
@@ -41,8 +47,10 @@ public class CrystalView : MonoBehaviour
         battery.ChargeValueChangedEvent += OnChargeValueChanged;
         battery.ChargeDrainedEvent += OnChargeDrained;
 
-        // Get access to the crystal material.
-        Transform crystalTransform = transform.Find("Offsets").Find("chrystal");
+        // Get access to the offsets transform and the crystal material.
+        offsets = transform.Find("Offsets");
+
+        Transform crystalTransform = offsets.Find("chrystal");
 
         Debug.Assert(crystalTransform != null);
 
@@ -85,9 +93,15 @@ public class CrystalView : MonoBehaviour
             crystalMaterial.color.b,
             crystalMaterial.color.a);
 
+        // Set light properties.
         crystalLight.intensity = crystalLightBaseIntensity + (crystalLightMaxExtraIntensity * 1f);
 
         crystalLight.range = crystalLightBaseRange + (crystalLightMaxExtraRange * 1f);
+
+        // Set model scale.
+        var scale = crystalBaseScale + (crystalExtraScale * 1f);
+
+        offsets.localScale = new Vector3(scale, scale, scale);
     }
 
     // Private methods.
@@ -114,9 +128,15 @@ public class CrystalView : MonoBehaviour
             crystalMaterial.color.b,
             chargeValue);
 
+        // Set light properties.
         crystalLight.intensity = crystalLightBaseIntensity + (crystalLightMaxExtraIntensity * chargeValue);
 
         crystalLight.range = crystalLightBaseRange + (crystalLightMaxExtraRange * chargeValue);
+
+        // Set model scale.
+        var scale = crystalBaseScale + (crystalExtraScale * chargeValue);
+
+        offsets.localScale = new Vector3(scale, scale, scale);
     }
 
     private void OnChargeDrained(object sender, CrystalInfo crystalInfo)
