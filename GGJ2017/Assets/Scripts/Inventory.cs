@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Inventory : MonoBehaviour {
-
+public class Inventory : MonoBehaviour
+{
+    // Private vars.
     private Dictionary<string, int> inventory = new Dictionary<string, int>();
-
+    
+    // Public methods.
     public int Count(string name)
     {
         return inventory[name];

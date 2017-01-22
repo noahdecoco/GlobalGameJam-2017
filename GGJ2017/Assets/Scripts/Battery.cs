@@ -34,6 +34,14 @@ public class Battery : MonoBehaviour
         crystalInfo = GetComponent<CrystalInfo>();
     }
 
+    void OnDestroy()
+    {
+        if (__global_Batteries.Contains(this))
+        {
+            __global_Batteries.Remove(this);
+        }
+    }
+
     // Public methods.
     public void Charge(float percentage)
     {
