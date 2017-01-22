@@ -25,7 +25,9 @@ public class GameManager : MonoBehaviour
 
     private StatsManager statsManager;
 
-    private int numberOfPlayers;
+    private int activePlayerCount;
+
+    private int totalPlayerCount;
 
     // Unity callbacks.
     void Start()
@@ -43,7 +45,7 @@ public class GameManager : MonoBehaviour
     // Public methods.
     public void StartGame(int numberOfPlayers)
     {
-        this.numberOfPlayers = numberOfPlayers;
+        this.activePlayerCount = totalPlayerCount = numberOfPlayers;
 
         GameObject[] spawnPointsToUse =
             numberOfPlayers == 2 ? spawnPoints.twoPlayers :
@@ -51,7 +53,7 @@ public class GameManager : MonoBehaviour
             numberOfPlayers == 4 ? spawnPoints.fourPlayers :
             null;
 
-        for (int i = 0; i < numberOfPlayers; ++i)
+        for (int i = 0; i < totalPlayerCount; ++i)
         {
             // Spawn.
             GameObject newCrystal = GameObject.Instantiate(CrystalPrefab);
@@ -97,7 +99,7 @@ public class GameManager : MonoBehaviour
 
     public void EndGame()
     {
-        for (int i = 0; i < numberOfPlayers; ++i)
+        for (int i = 0; i < totalPlayerCount; ++i)
         {
             var playerObject = ActivePlayersGameObjects[i].PlayerObject;
 
@@ -110,7 +112,7 @@ public class GameManager : MonoBehaviour
             {
                 playerInfo.WonGame = true;
 
-                Debug.Log(playerInfo.PlayerIndex + " has won the game!");
+                Debug.Log("Player " + playerInfo.PlayerIndex + " has won the game!");
             }
 
             // Unsubscribe from events.
@@ -129,9 +131,12 @@ public class GameManager : MonoBehaviour
     {
         PermaKill(crystalInfo.PlayerIndex);
 
-        if (--numberOfPlayers <= 1)
+        --activePlayerCount;
+
+        Debug.Log("Player " + crystalInfo.PlayerIndex + " has lost the game, " + activePlayerCount + " players left");
+
+        if (activePlayerCount <= 1)
         {
-            Debug.Log("one charge drained, numberOfPlayers: " + numberOfPlayers);
             EndGame();
         }
     }
