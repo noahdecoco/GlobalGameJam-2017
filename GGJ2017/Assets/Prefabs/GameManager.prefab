@@ -56,4 +56,3 @@ MonoBehaviour:
   PlayerPrefab: {fileID: 1000010132483710, guid: bb70c4aac0db44f7eb5d332f53843d54,
     type: 2}
   LevelObject: {fileID: 0}
-  PlayerSpawnOffset: {x: 2, y: 0, z: 2}
