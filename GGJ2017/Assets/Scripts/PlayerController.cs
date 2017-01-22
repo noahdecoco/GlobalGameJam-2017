@@ -237,7 +237,7 @@ public class PlayerController : MonoBehaviour
         if (interactionOccurred)
         {
             animator.SetTrigger("magic");
-            beamOrigin.SetActive(true);
+            //beamOrigin.SetActive(true);
         }
         
     }
@@ -245,7 +245,7 @@ public class PlayerController : MonoBehaviour
     private void StopInteraction()
     {
         interactor.StopInteract();
-        beamOrigin.SetActive(false);
+        //beamOrigin.SetActive(false);
     }
 
     // ShockWave
