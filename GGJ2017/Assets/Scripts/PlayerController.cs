@@ -33,6 +33,14 @@ public class PlayerController : MonoBehaviour
     // Component reference vars.
     private Interactor interactor;
 
+    private bool isStunned;
+
+    public float stunTime = 2f;
+    private float stunCooldown = 0f;
+
+    public GameObject stunPrefab;
+    private GameObject stunInst;
+
     // Unity callbacks.
     void Start()
     {
@@ -41,6 +49,8 @@ public class PlayerController : MonoBehaviour
 		animator = transform.GetChild(0).GetComponent<Animator>();
 
         rumbler = GetComponent<Rumbler>();
+
+        isStunned = false;
     }
 	
 	void Update ()
@@ -55,11 +65,25 @@ public class PlayerController : MonoBehaviour
         {
 			rechargeTime -= Time.deltaTime;
 		}
+
+        if(isStunned == true)
+        {
+            if(stunCooldown > 0)
+            {
+                stunCooldown -= Time.deltaTime;
+                if(stunCooldown < 0)
+                {
+                    RemoveStun();
+                }
+            }
+        }
 	}
 
     // Private methods.
     private void HandleInput()
     {
+        if (isStunned) return;
+
         if (useKeyboardControls)
         {
             HandleKeyboardInput();
@@ -199,9 +223,12 @@ public class PlayerController : MonoBehaviour
     // Drain/Charge interaction
     private void PerformInteraction()
     {
-		interactor.Interact();
+		bool interactionOccurred = interactor.Interact();
 
-		animator.SetTrigger("magic");
+        if (interactionOccurred)
+        {
+            animator.SetTrigger("magic");
+        }
     }
 
     private void StopInteraction()
@@ -231,4 +258,22 @@ public class PlayerController : MonoBehaviour
 	{
 		animator.SetTrigger("idle");
 	}
+
+    public void ActivateStun()
+    {
+        isStunned = true;
+        stunCooldown = stunTime;
+        stunInst = (GameObject)Instantiate(stunPrefab, transform.position, Quaternion.identity);
+        stunInst.transform.parent = transform;
+    }
+
+    public void RemoveStun()
+    {
+        isStunned = false;
+        stunCooldown = 0;
+        if (stunInst != null)
+        {
+            Destroy(stunInst);
+        }
+    }
 }	

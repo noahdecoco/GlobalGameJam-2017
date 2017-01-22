@@ -163,9 +163,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
-  useKeyboardControls: 1
+  useKeyboardControls: 0
   Shockwave: {fileID: 1256165501701760, guid: 69ded0d7db6fb954383552f6e2d3c5db, type: 2}
   GamepadIndex: 0
+  stunTime: 2
+  stunPrefab: {fileID: 1082370438361240, guid: 164c7b69962be93408e03687a4831877, type: 2}
 --- !u!114 &114987857291187668
 MonoBehaviour:
   m_ObjectHideFlags: 1

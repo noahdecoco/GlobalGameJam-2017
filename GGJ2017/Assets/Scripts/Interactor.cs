@@ -23,15 +23,21 @@ public class Interactor : MonoBehaviour
         rumbler = GetComponent<Rumbler>();
     }
 
-    public void Interact()
+    public bool Interact()
     {
-        if (!TryCharging())
+        bool result = TryCharging();
+
+        if (!result)
         {
-            if (!TryDraining())
-            {
-                rumbler.StopRumble();
-            }
+            result = TryDraining();
         }
+
+        if (!result)
+        {
+            rumbler.StopRumble();
+        }
+
+        return result;
     }
 
     public void StopInteract()
@@ -45,7 +51,8 @@ public class Interactor : MonoBehaviour
         Battery nearestBattery = Battery.FindNearestBatteryWithinDistance(transform.position, ChargeDistance);
 
         if (nearestBattery 
-            && nearestBattery.IsFriendlyWith(playerInfo))
+            && nearestBattery.IsFriendlyWith(playerInfo)
+            && !nearestBattery.IsFullyCharged)
         {
             nearestBattery.Charge(ChargePercentagePerSecond * Time.deltaTime);
 

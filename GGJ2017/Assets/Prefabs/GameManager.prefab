@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114927753642528294}
   - component: {fileID: 114088177467510550}
   - component: {fileID: 114197951572359198}
-  - component: {fileID: 114561513999212242}
+  - component: {fileID: 114620630559842406}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -70,7 +70,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Platforms: []
---- !u!114 &114561513999212242
+--- !u!114 &114620630559842406
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

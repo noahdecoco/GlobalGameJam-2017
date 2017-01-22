@@ -36,6 +36,7 @@ public class PlayerRespawn : MonoBehaviour
         {
             Debug.Log(gameObject.name + " just fell to their death.");
 
+            gameObject.GetComponent<PlayerController>().RemoveStun();
             rumbler.StopRumble();
 
             gameObject.SetActive(false);
