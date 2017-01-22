@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 222165109776388486}
   - component: {fileID: 114076375941195204}
   m_Layer: 5
-  m_Name: GemCount
+  m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 222081541772425028}
   - component: {fileID: 114216876625997992}
   m_Layer: 5
-  m_Name: CrystalHealth
+  m_Name: Gems
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 222499746808284004}
   - component: {fileID: 114921312689134708}
   m_Layer: 5
-  m_Name: GemCount
+  m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -156,7 +156,7 @@ GameObject:
   - component: {fileID: 222488425651150262}
   - component: {fileID: 114293530729888360}
   m_Layer: 5
-  m_Name: CrystalHealth
+  m_Name: Gems
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
