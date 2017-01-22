@@ -38,6 +38,10 @@ public class CrystalView : MonoBehaviour
 
     private Transform offsets;
 
+    public GameObject explosionPrefab;
+    private GameObject explosionInst;
+    private bool isDead = false;
+
     // Unity callbacks.
     void Start ()
     {
@@ -142,5 +146,16 @@ public class CrystalView : MonoBehaviour
     private void OnChargeDrained(object sender, CrystalInfo crystalInfo)
     {
         // TODO: Some kind of spectacular explosion.
+
+        if (isDead == true) return;
+
+        isDead = true;
+        explosionInst = (GameObject)Instantiate(explosionPrefab, transform.position + new Vector3(0,2,0), Quaternion.identity);
+        Invoke("DestoyExplosion", 3f);
+    }
+
+    void DestoyExplosion()
+    {
+        Destroy(explosionInst);
     }
 }
