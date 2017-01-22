@@ -188,6 +188,30 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114984761799879708, guid: a9de1290a55ae44b08f27679b130f1e0,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 6a77d56da4d54c94da4b492d0fcf64e6,
+        type: 3}
+    - target: {fileID: 114257932010567488, guid: a9de1290a55ae44b08f27679b130f1e0,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 6a77d56da4d54c94da4b492d0fcf64e6,
+        type: 3}
+    - target: {fileID: 114216876625997992, guid: a9de1290a55ae44b08f27679b130f1e0,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 6a77d56da4d54c94da4b492d0fcf64e6,
+        type: 3}
+    - target: {fileID: 114293530729888360, guid: a9de1290a55ae44b08f27679b130f1e0,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 6a77d56da4d54c94da4b492d0fcf64e6,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a9de1290a55ae44b08f27679b130f1e0, type: 2}
   m_IsPrefabParent: 0
