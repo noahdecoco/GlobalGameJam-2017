@@ -39,6 +39,8 @@ public class Shockwave : MonoBehaviour
 			other.GetComponent<Rigidbody>().AddForce(dir.normalized * 50000);
 
             other.GetComponent<Rumbler>().SetFadingRumbleOverTime(0.25f, 1f, 0.25f);
+
+            other.GetComponent<PlayerController>().ActivateStun();
         }
 	}
 }

@@ -21,6 +21,9 @@ public class PlayerRespawn : MonoBehaviour
 
     private Rumbler rumbler;
 
+    public GameObject beamPrefab;
+    private GameObject beamInst;
+
     // Unity callbacks.
     void Awake()
     {
@@ -38,6 +41,8 @@ public class PlayerRespawn : MonoBehaviour
             gameObject.SetActive(false);
 
             Invoke("Respawn", respawnTime);
+            Invoke("MakeBeam", respawnTime / 2f);
+            gameObject.GetComponent<PlayerController>().RemoveStun();
 
             IsRespawning = true;
 
@@ -59,5 +64,18 @@ public class PlayerRespawn : MonoBehaviour
         // origin and the crystal spawn position. This places the player 
         // between the crystal and the origin.
         gameObject.transform.position = RespawnPoint.transform.position * 0.92f;
+    }
+
+    void MakeBeam()
+    {
+        Vector3 pos = RespawnPoint.transform.position * 0.92f;
+        beamInst = (GameObject)Instantiate(beamPrefab, pos, Quaternion.identity);
+        beamInst.transform.parent = RespawnPoint.transform;
+        Invoke("RemoveBeam", respawnTime);
+    }
+
+    void RemoveBeam()
+    {
+        Destroy(beamInst);
     }
  }

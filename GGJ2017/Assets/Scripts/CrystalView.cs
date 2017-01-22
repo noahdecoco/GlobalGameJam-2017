@@ -109,7 +109,7 @@ public class CrystalView : MonoBehaviour
     }
 
     // Private methods.
-    private void OnChargeValueChanged(object sender, float chargeValue)
+    private void OnChargeValueChanged(object sender, float chargeValue, int crystalIndex)
     {
         // TODO: Insert more code affecting how crystal looks here.
 
