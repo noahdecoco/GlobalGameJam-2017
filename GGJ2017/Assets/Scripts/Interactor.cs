@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Interactor : MonoBehaviour
 {
-    public float ChargeDistance = 2f;
+    public float ChargeDistance = 5f;
 
     public float ChargePercentagePerSecond = 0.25f;
 
-    public float DrainDistance = 2f;
+    public float DrainDistance = 5f;
 
     public float DrainPercentagePerSecond = 0.25f;
 

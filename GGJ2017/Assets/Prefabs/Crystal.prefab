@@ -297,6 +297,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 310f46277e75f2b48934a0ddeba5f82f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 1256165501701760, guid: f5e4f750e6fbf3440baab8ca30d9d1df,
+    type: 2}
 --- !u!114 &114622178641627494
 MonoBehaviour:
   m_ObjectHideFlags: 1
