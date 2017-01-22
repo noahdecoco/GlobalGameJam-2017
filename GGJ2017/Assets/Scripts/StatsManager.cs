@@ -36,8 +36,11 @@ public class StatsManager : MonoBehaviour {
 
 	public void UpdateCrystalHealth(int playerIndex, float crystalHealth)
 	{
-		Text healthText = playerGui[playerIndex].transform.Find("Health").GetComponent<Text>();
-		healthText.text = crystalHealth.ToString();
+//		Text healthText = playerGui[playerIndex].transform.Find("Health").GetComponent<Text>();
+//		healthText.text = crystalHealth.ToString();
+
+		Image healthBar = playerGui[playerIndex].transform.Find("HealthBar").GetComponent<Image>();
+		healthBar.fillAmount = crystalHealth;
 	}
 
 	public void UpdateGemCount(int playerIndex, int gemValue)
