@@ -18,13 +18,22 @@ public class PlayerRespawn : MonoBehaviour
     
     // Private vars.
     private float respawnTime = 5.0f;
-    
+
+    private Rumbler rumbler;
+
     // Unity callbacks.
-	void OnCollisionEnter(Collision other)
+    void Awake()
+    {
+        rumbler = GetComponent<Rumbler>();
+    }
+
+    void OnCollisionEnter(Collision other)
     {
 		if (other.gameObject.tag == "Death")
         {
             Debug.Log(gameObject.name + " just fell to their death.");
+
+            rumbler.StopRumble();
 
             gameObject.SetActive(false);
 

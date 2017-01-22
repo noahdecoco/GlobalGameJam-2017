@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     // Input vars.
     private bool gamepadIndexSet = false;
 
-    private PlayerIndex gamepadIndex;
+    public PlayerIndex GamepadIndex;
 
     private GamePadState state;
 
@@ -72,9 +72,9 @@ public class PlayerController : MonoBehaviour
         // Drop the gamepad index.
         if (gamepadIndexSet)
         {
-            Debug.Log(string.Format("{0} dropping gamepad {1} due to enabling keyboard controls", gameObject.name, gamepadIndex));
+            Debug.Log(string.Format("{0} dropping gamepad {1} due to enabling keyboard controls", gameObject.name, GamepadIndex));
 
-            __global_ClaimedGamepadIndices[(int)gamepadIndex] = false;
+            __global_ClaimedGamepadIndices[(int)GamepadIndex] = false;
 
             gamepadIndexSet = false;
         }
@@ -90,7 +90,12 @@ public class PlayerController : MonoBehaviour
             PerformInteraction();
         }
 
-		// Interact with space bar.
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            StopInteraction();
+        }
+
+        // Interact with space bar.
         if (Input.GetKey(KeyCode.C))
         {
 			PerformShockwave();
@@ -102,9 +107,9 @@ public class PlayerController : MonoBehaviour
         // If gamepad disconnects, drop the index.
         if (gamepadIndexSet && !prevState.IsConnected)
         {
-            Debug.Log(string.Format("{0} dropping gamepad {1} due to disconnection", gameObject.name, gamepadIndex));
+            Debug.Log(string.Format("{0} dropping gamepad {1} due to disconnection", gameObject.name, GamepadIndex));
 
-            __global_ClaimedGamepadIndices[(int)gamepadIndex] = false;
+            __global_ClaimedGamepadIndices[(int)GamepadIndex] = false;
 
             gamepadIndexSet = false;
         }
@@ -124,7 +129,7 @@ public class PlayerController : MonoBehaviour
                 {
                     Debug.Log(string.Format("{0} using gamepad {1}", gameObject.name, testPlayerIndex));
 
-                    gamepadIndex = testPlayerIndex;
+                    GamepadIndex = testPlayerIndex;
 
                     gamepadIndexSet = true;
 
@@ -141,7 +146,7 @@ public class PlayerController : MonoBehaviour
             // Keep track of previous and current gamepad state.
             prevState = state;
 
-            state = GamePad.GetState(gamepadIndex);
+            state = GamePad.GetState(GamepadIndex);
 
             // Move with left thumbstick.
             var direction = new Vector3(state.ThumbSticks.Left.X, 0f, state.ThumbSticks.Left.Y);
@@ -154,7 +159,13 @@ public class PlayerController : MonoBehaviour
                 PerformInteraction();
             }
 
-			if (state.Buttons.B == ButtonState.Pressed)
+            if (state.Buttons.A == ButtonState.Released
+                && prevState.Buttons.A == ButtonState.Pressed)
+            {
+                StopInteraction();
+            }
+
+            if (state.Buttons.B == ButtonState.Pressed)
             {
 				PerformShockwave();
             }
@@ -189,7 +200,12 @@ public class PlayerController : MonoBehaviour
 		animator.SetTrigger("magic");
     }
 
-	// ShockWave
+    private void StopInteraction()
+    {
+        interactor.StopInteract();
+    }
+
+    // ShockWave
     private void PerformShockwave()
     {
         if (rechargeTime > 0)

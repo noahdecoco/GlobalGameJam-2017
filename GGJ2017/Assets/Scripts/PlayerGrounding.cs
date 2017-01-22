@@ -1,27 +1,57 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerGrounding : MonoBehaviour {
+public class PlayerGrounding : MonoBehaviour
+{
+    private Rumbler rumbler;
 
-	private void OnCollisionEnter(Collision other) {
+    void Awake()
+    {
+        rumbler = GetComponent<Rumbler>();
+    }
 
-		if(other.gameObject.tag == "MovingPlatform") {
-
-			//print("Enter");
-
+    private void OnCollisionEnter(Collision other)
+    {
+		if (other.gameObject.tag == "MovingPlatform")
+        {
 			transform.parent = other.transform;
+
+            Platform platform = other.gameObject.GetComponent<Platform>();
+
+            if (platform.IsShaking)
+            {
+                rumbler.SetRumble(platform.DropTimerPercentageElapsed, platform.DropTimerPercentageElapsed);
+            }
+            else
+            {
+                rumbler.StopRumble();
+            }
 		}
- 	}
+    }
 
-	private void OnCollisionExit(Collision other) {
-		if(other.gameObject.tag == "MovingPlatform") {
+    private void OnCollisionStay(Collision other)
+    {
+        if (other.gameObject.tag == "MovingPlatform")
+        {
+            Platform platform = other.gameObject.GetComponent<Platform>();
 
-			//print("Leave");
+            if (platform.IsDropped)
+            {
+                rumbler.StopRumble();
+            }
+        }
+    }
 
-			if(transform.parent == other.transform){
+    private void OnCollisionExit(Collision other)
+    {
+		if (other.gameObject.tag == "MovingPlatform")
+        {
+			if (transform.parent == other.transform)
+            {
 				transform.parent = null;
-			}
+
+                rumbler.StopRumble();
+            }
 		}
  	}
-
 }

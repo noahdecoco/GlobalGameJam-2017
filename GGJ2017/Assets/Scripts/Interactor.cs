@@ -14,17 +14,29 @@ public class Interactor : MonoBehaviour
 
     private PlayerInfo playerInfo;
 
+    private Rumbler rumbler;
+
     void Start()
     {
         playerInfo = GetComponent<PlayerInfo>();
+
+        rumbler = GetComponent<Rumbler>();
     }
 
     public void Interact()
     {
         if (!TryCharging())
         {
-            TryDraining();
+            if (!TryDraining())
+            {
+                rumbler.StopRumble();
+            }
         }
+    }
+
+    public void StopInteract()
+    {
+        rumbler.StopRumble();
     }
 
     // If in range of a battery and it's friendly, charge it.
@@ -36,6 +48,8 @@ public class Interactor : MonoBehaviour
             && nearestBattery.IsFriendlyWith(playerInfo))
         {
             nearestBattery.Charge(ChargePercentagePerSecond * Time.deltaTime);
+
+            rumbler.SetRumble(0.25f, 0.15f);
 
             return true;
         }
@@ -52,6 +66,8 @@ public class Interactor : MonoBehaviour
             && !nearestBattery.IsFriendlyWith(playerInfo))
         {
             nearestBattery.Drain(DrainPercentagePerSecond * Time.deltaTime);
+
+            rumbler.SetRumble(0.05f, 0.45f);
 
             return true;
         }
