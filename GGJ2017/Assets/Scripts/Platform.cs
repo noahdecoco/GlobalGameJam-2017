@@ -20,7 +20,7 @@ public class Platform : MonoBehaviour
     // Static vars.
     private static float timeToDrop = 2f;
 
-    private static float dropDistance = 20f;
+    private static float dropDistance = 30f;
 
     // Private vars.
     private float _timeToShake;

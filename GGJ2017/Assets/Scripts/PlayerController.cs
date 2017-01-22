@@ -269,8 +269,11 @@ public class PlayerController : MonoBehaviour
 
     public void RemoveStun()
     {
-        isStunned = true;
+        isStunned = false;
         stunCooldown = 0;
-        Destroy(stunInst);
+        if (stunInst != null)
+        {
+            Destroy(stunInst);
+        }
     }
 }	
