@@ -29,6 +29,7 @@ GameObject:
   - component: {fileID: 114017030136975376}
   - component: {fileID: 114242447519328052}
   - component: {fileID: 114359101687580518}
+  - component: {fileID: 114850728398348414}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -102,9 +103,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3d7ea989edee0243b268497bc9838df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ChargeDistance: 2
+  ChargeDistance: 4
   ChargePercentagePerSecond: 0.25
-  DrainDistance: 2
+  DrainDistance: 4
   DrainPercentagePerSecond: 0.25
 --- !u!114 &114242447519328052
 MonoBehaviour:
@@ -126,6 +127,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31aeceb131947ea46bcc65148d8cae58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114850728398348414
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010132483710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63ca1bbcc10454e4e8ee7ae639b64d59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114893379059909464
