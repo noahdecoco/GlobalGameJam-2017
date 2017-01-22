@@ -13,7 +13,7 @@ public class Shockwave : MonoBehaviour {
 
 	public void Blast(){
 		_sc = gameObject.GetComponent<SphereCollider>();
-		Invoke("destroy", 1.5f);
+		Invoke("destroy", 1f);
 		//iTween.ScaleTo(sc,iTween.Hash("radius",2,"time",1.5f,"oncomplete","destroy"));
 	}
 
@@ -31,7 +31,7 @@ public class Shockwave : MonoBehaviour {
 			
 			Vector3 dir = other.transform.position - _caster.transform.position;
 			print(dir);
-			other.GetComponent<Rigidbody>().AddForce(dir * 50000);
+			other.GetComponent<Rigidbody>().AddForce(dir.normalized * 50000);
 
 		}
 

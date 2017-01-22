@@ -47,14 +47,33 @@ public class CrystalView : MonoBehaviour
         crystalMaterial.color = crystalColors[crystalInfo.PlayerIndex];
 
         crystalLight = transform.GetComponentInChildren<Light>();
+        
+
+        crystalSplosion = transform.FindChild("splosion").GetComponent<ParticleSystem>();
+        crystalFlares = transform.FindChild("flares").GetComponent<ParticleSystem>();
+        crystalMaterial.color = new Color(
+             crystalMaterial.color.r,
+             crystalMaterial.color.g,
+             crystalMaterial.color.b,
+             crystalMaterial.color.a);
+
         crystalLight.color = new Color(
             crystalMaterial.color.r,
             crystalMaterial.color.g,
             crystalMaterial.color.b,
             crystalMaterial.color.a);
 
-        crystalSplosion = transform.FindChild("splosion").GetComponent<ParticleSystem>();
-        crystalFlares = transform.FindChild("flares").GetComponent<ParticleSystem>();
+        crystalSplosion.startColor = new Color(
+            crystalMaterial.color.r,
+            crystalMaterial.color.g,
+            crystalMaterial.color.b,
+            crystalMaterial.color.a);
+
+        crystalFlares.startColor = new Color(
+            crystalMaterial.color.r,
+            crystalMaterial.color.g,
+            crystalMaterial.color.b,
+            crystalMaterial.color.a);
     }
 
     // Private methods.

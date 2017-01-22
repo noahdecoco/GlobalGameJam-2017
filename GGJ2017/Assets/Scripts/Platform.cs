@@ -53,7 +53,7 @@ public class Platform : MonoBehaviour {
 		}
 
 		if(_isShaking) {
-			transform.position = new Vector3(0, Random.Range(-0.2f, 0.0f), 0);
+			transform.position = new Vector3(0, Random.Range(-0.5f, 0.0f), 0);
 			_timeToDrop -= Time.deltaTime;
 			if(_timeToDrop < 0) {
 				_isShaking = false;

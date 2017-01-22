@@ -59,6 +59,11 @@ ModelImporter:
     100102: WizSpine2
     100104: WizSpine3
     100106: BeamOrigin
+    100108: ring2
+    100110: ring3
+    100112: ring4
+    100114: ring5
+    100116: ring6
     400000: wizard
     400002: //RootNode
     400004: Wizcape1
@@ -113,7 +118,27 @@ ModelImporter:
     400102: WizSpine2
     400104: WizSpine3
     400106: BeamOrigin
+    400108: ring2
+    400110: ring3
+    400112: ring4
+    400114: ring5
+    400116: ring6
+    2300000: ring2
+    2300002: ring3
+    2300004: ring4
+    2300006: ring5
+    2300008: ring6
+    3300000: ring2
+    3300002: ring3
+    3300004: ring4
+    3300006: ring5
+    3300008: ring6
     4300000: wizard
+    4300002: ring2
+    4300004: ring3
+    4300006: ring4
+    4300008: ring5
+    4300010: ring6
     7400000: tpose
     7400002: idle
     7400004: run
