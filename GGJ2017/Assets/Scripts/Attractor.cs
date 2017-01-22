@@ -9,6 +9,8 @@ public class Attractor : MonoBehaviour
 
     public float Range = 7f;
 
+    public AnimationCurve Curve;
+
     // Unity callbacks.
     void Start () {
 		
@@ -26,9 +28,10 @@ public class Attractor : MonoBehaviour
             {
                 var distancePercentage = distance / Range;
 
-                a.GetComponent<Rigidbody>().AddForce(direction.normalized * Power * (1f - distancePercentage));
-
-                Debug.Log("WIOW");
+                a.GetComponent<Rigidbody>().AddForce(
+                    direction.normalized 
+                    * Power 
+                    * Curve.Evaluate(1f - distancePercentage));
             }
         }
 	}
