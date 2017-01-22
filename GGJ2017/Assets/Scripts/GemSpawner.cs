@@ -90,7 +90,7 @@ public class GemSpawner : MonoBehaviour
         // Spawn gem.
         GameObject newGem = GameObject.Instantiate(GemPrefab);
 
-        newGem.transform.position = new Vector3(x, 0f, z);
+        newGem.transform.position = new Vector3(x, platform.transform.position.y, z);
 
         newGem.transform.parent = platform.transform;
 
