@@ -13,6 +13,14 @@ public class CrystalView : MonoBehaviour
         new Color(1f, 1f, 0f, 1f)  // Yellow
     };
 
+    private static float crystalLightBaseIntensity = 0.5f;
+
+    private static float crystalLightMaxExtraIntensity = 1.5f;
+
+    private static float crystalLightBaseRange = 5f;
+
+    private static float crystalLightMaxExtraRange = 25f;
+
     // Private vars.
     private Battery battery;
 
@@ -21,6 +29,7 @@ public class CrystalView : MonoBehaviour
     private Light crystalLight;
 
     private ParticleSystem crystalSplosion;
+
     private ParticleSystem crystalFlares;
 
     // Unity callbacks.
@@ -48,9 +57,10 @@ public class CrystalView : MonoBehaviour
 
         crystalLight = transform.GetComponentInChildren<Light>();
         
-
         crystalSplosion = transform.FindChild("splosion").GetComponent<ParticleSystem>();
+
         crystalFlares = transform.FindChild("flares").GetComponent<ParticleSystem>();
+
         crystalMaterial.color = new Color(
              crystalMaterial.color.r,
              crystalMaterial.color.g,
@@ -74,6 +84,10 @@ public class CrystalView : MonoBehaviour
             crystalMaterial.color.g,
             crystalMaterial.color.b,
             crystalMaterial.color.a);
+
+        crystalLight.intensity = crystalLightBaseIntensity + (crystalLightMaxExtraIntensity * 1f);
+
+        crystalLight.range = crystalLightBaseRange + (crystalLightMaxExtraRange * 1f);
     }
 
     // Private methods.
@@ -87,8 +101,7 @@ public class CrystalView : MonoBehaviour
             crystalMaterial.color.g, 
             crystalMaterial.color.b, 
             chargeValue);
-
-
+        
         crystalFlares.startColor = new Color(
             crystalMaterial.color.r,
             crystalMaterial.color.g,
@@ -100,6 +113,10 @@ public class CrystalView : MonoBehaviour
             crystalMaterial.color.g,
             crystalMaterial.color.b,
             chargeValue);
+
+        crystalLight.intensity = crystalLightBaseIntensity + (crystalLightMaxExtraIntensity * chargeValue);
+
+        crystalLight.range = crystalLightBaseRange + (crystalLightMaxExtraRange * chargeValue);
     }
 
     private void OnChargeDrained(object sender, CrystalInfo crystalInfo)
