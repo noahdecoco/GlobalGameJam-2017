@@ -566,7 +566,7 @@ ModelImporter:
       name: magic
       takeName: Take 001
       firstFrame: 61
-      lastFrame: 65
+      lastFrame: 75
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
