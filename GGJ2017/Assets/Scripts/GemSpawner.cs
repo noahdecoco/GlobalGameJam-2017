@@ -94,6 +94,19 @@ public class GemSpawner : MonoBehaviour
 
         newGem.transform.parent = platform.transform;
 
+        // Listen for picked up event.
+        Pickup.PickedUpEvent += OnPickedUp;
+
+        // Keep track.
         activeGems.Add(newGem);
+    }
+
+    private void OnPickedUp(object sender, GameObject gameObject, string pickupName, int pickupCount)
+    {
+        if (pickupName == "Gem"
+            && activeGems.Contains(gameObject))
+        {
+            activeGems.Remove(gameObject);
+        }
     }
 }
