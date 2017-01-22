@@ -18,7 +18,8 @@ public class StatsManager : MonoBehaviour {
 //			print(gameManager.ActivePlayersGameObjects[i].PlayerObject.GetComponent<Inventory>().Count("Gem"));
 			print(gameManager.ActivePlayersGameObjects[i].CrystalObject.GetComponent<Battery>().ChargeValue);
 		}
-
 	}
+
+
 
 }
