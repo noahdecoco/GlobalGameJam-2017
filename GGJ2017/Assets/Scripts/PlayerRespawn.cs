@@ -32,7 +32,10 @@ public class PlayerRespawn : MonoBehaviour
 
             IsRespawning = true;
 
-            PlayerWaitingForRespawnEvent(this, gameObject, respawnTime);
+            if (PlayerWaitingForRespawnEvent != null)
+            {
+                PlayerWaitingForRespawnEvent(this, gameObject, respawnTime);
+            }
         }
  	}
 

@@ -28,6 +28,7 @@ GameObject:
   - component: {fileID: 114987857291187668}
   - component: {fileID: 114017030136975376}
   - component: {fileID: 114242447519328052}
+  - component: {fileID: 114359101687580518}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -116,6 +117,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7c267faa8f839349b095ec4d2f66dae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114359101687580518
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010132483710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31aeceb131947ea46bcc65148d8cae58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114893379059909464
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -138,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f3bc80d9a8ba481eaee97a482428065, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  moveSpeed: 7
   useKeyboardControls: 0
   Shockwave: {fileID: 1256165501701760, guid: 69ded0d7db6fb954383552f6e2d3c5db, type: 2}
 --- !u!114 &114987857291187668
@@ -153,6 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RespawnPoint: {fileID: 0}
+  IsRespawning: 0
 --- !u!136 &136727308285791212
 CapsuleCollider:
   m_ObjectHideFlags: 1
