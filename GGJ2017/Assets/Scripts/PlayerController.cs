@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
 
 	// Private vars.
     private float rechargeTime = 3.0f;
+
     private Animator animator;
 
     // Static (global) vars. Don't use globals, except for the GLOBAL GAME JAM!!!
@@ -34,6 +35,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         interactor = GetComponent<Interactor>();
+
 		animator = transform.GetChild(0).GetComponent<Animator>();
     }
 	
@@ -41,9 +43,12 @@ public class PlayerController : MonoBehaviour
     {
 		HandleInput();
 
-		if(rechargeTime < 0) {
+		if (rechargeTime < 0)
+        {
 			rechargeTime = 0;
-		} else {
+		}
+        else
+        {
 			rechargeTime -= Time.deltaTime;
 		}
 	}
@@ -76,12 +81,8 @@ public class PlayerController : MonoBehaviour
 
         // Move with WASD.
         var direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
-        if(direction != new Vector3(0,0,0)){
-			PerformMovement(direction);
-        } else {
-        	setPlayerIdle();
-        };
 
+        PerformMovement(direction);
 
         // Interact with space bar.
         if (Input.GetKey(KeyCode.Space))
@@ -144,11 +145,8 @@ public class PlayerController : MonoBehaviour
 
             // Move with left thumbstick.
             var direction = new Vector3(state.ThumbSticks.Left.X, 0f, state.ThumbSticks.Left.Y);
-			if(direction != new Vector3(0,0,0)){
-				PerformMovement(direction);
-	        } else {
-	        	setPlayerIdle();
-	        };
+
+            PerformMovement(direction);
 
             // Interact with A button.
             if (state.Buttons.A == ButtonState.Pressed)
@@ -160,44 +158,54 @@ public class PlayerController : MonoBehaviour
             {
 				PerformShockwave();
             }
-			
         }
     }
 
     private void PerformMovement(Vector3 direction)
     {
-        direction.Normalize();
+        if (direction.magnitude > 0f)
+        {
+            direction.Normalize();
 
-        transform.Translate(direction * moveSpeed * Time.deltaTime, Space.World);
+            transform.Translate(direction * moveSpeed * Time.deltaTime, Space.World);
 
-        transform.LookAt(transform.position + direction);
+            transform.LookAt(transform.position + direction);
 
-        transform.eulerAngles = new Vector3(0f, transform.eulerAngles.y, 0f);
+            transform.eulerAngles = new Vector3(0f, transform.eulerAngles.y, 0f);
 
-        animator.SetTrigger("walk");
+            animator.SetTrigger("walk");
+        }
+        else
+        {
+            SetPlayerIdle();
+        }
     }
 
     // Drain/Charge interaction
     private void PerformInteraction()
     {
 		interactor.Interact();
+
 		animator.SetTrigger("magic");
     }
 
 	// ShockWave
     private void PerformShockwave()
     {
-		
-		if(rechargeTime > 0) return;
+        if (rechargeTime > 0)
+        {
+            return;
+        }
 
 		var shockwave = Instantiate(Shockwave, gameObject.transform.position, Quaternion.identity);
+
 		shockwave.GetComponent<Shockwave>().SetCaster(gameObject);
 		shockwave.GetComponent<Shockwave>().Blast();
+
 		rechargeTime = 3.0f;
-
     }
-
-	private void setPlayerIdle()
+    
+	private void SetPlayerIdle()
 	{
 		animator.SetTrigger("idle");
 	}
