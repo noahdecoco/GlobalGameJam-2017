@@ -133,8 +133,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1314720032558846}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 3.8674843, y: 3.8674843, z: 3.8674843}
+  m_LocalPosition: {x: 0, y: 1.82, z: 0}
+  m_LocalScale: {x: 2.1083486, y: 2.1083486, z: 2.1083486}
   m_Children:
   - {fileID: 4562167109729106}
   m_Father: {fileID: 4938006872210502}
@@ -147,7 +147,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1224742053491190}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.05, z: 0}
+  m_LocalPosition: {x: 0, y: 2.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4938006872210502}
@@ -159,7 +159,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1023649847664700}
-  m_LocalRotation: {x: -0.7071068, y: -0.00000018831395, z: -0.00000018831393, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -204,12 +204,13 @@ MeshRenderer:
   m_GameObject: {fileID: 1023649847664700}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 4c7df67956ef8b84ea99ccec527acc18, type: 2}
+  - {fileID: 2100000, guid: 309ae5fe52921be47af2fb5686cec763, type: 2}
+  - {fileID: 2100000, guid: 5307c28c9dc2a4d4cadf58490b4d8698, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -233,7 +234,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1023649847664700}
-  m_Mesh: {fileID: 4300000, guid: a1740a4be5217554e884538d95b6d2d1, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 613191c867d85a9408c38cf796c6da66, type: 3}
 --- !u!95 &95707380455331640
 Animator:
   serializedVersion: 3
@@ -2988,7 +2989,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -203941138
+  randomSeed: 732411085
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3137,7 +3138,7 @@ ParticleSystem:
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.14117648, g: 0.14117648, b: 0.14117648, a: 1}
+      maxColor: {r: 0.21176471, g: 0.21176471, b: 0.21176471, a: 1}
       minMaxState: 0
     startSize:
       scalar: 8

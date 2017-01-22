@@ -37,7 +37,7 @@ public class CrystalView : MonoBehaviour
 
         Debug.Assert(crystalTransform != null);
 
-        crystalMaterial = crystalTransform.GetComponent<Renderer>().material;
+        crystalMaterial = crystalTransform.GetComponent<Renderer>().materials[1];
 
         Debug.Assert(crystalMaterial != null);
 
