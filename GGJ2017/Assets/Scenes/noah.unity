@@ -305,6 +305,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2520eb105f8140cc918f8513e833cd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerGui:
+  - {fileID: 1394164702}
+  - {fileID: 116329358}
+  - {fileID: 297881323}
+  - {fileID: 1940462767}
   playerBlue: {fileID: 1394164702}
   playerGreen: {fileID: 116329358}
   playerRed: {fileID: 297881323}
