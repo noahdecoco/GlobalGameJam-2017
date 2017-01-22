@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviour
 
     public PlayerIndex GamepadIndex;
 
+    private Rumbler rumbler;
+
     private GamePadState state;
 
     private GamePadState prevState;
@@ -37,6 +39,8 @@ public class PlayerController : MonoBehaviour
         interactor = GetComponent<Interactor>();
 
 		animator = transform.GetChild(0).GetComponent<Animator>();
+
+        rumbler = GetComponent<Rumbler>();
     }
 	
 	void Update ()
@@ -212,8 +216,10 @@ public class PlayerController : MonoBehaviour
         {
             return;
         }
+        
+        rumbler.SetFadingRumbleOverTime(1f, 0.25f, 0.25f);
 
-		var shockwave = Instantiate(Shockwave, gameObject.transform.position, Quaternion.identity);
+        var shockwave = Instantiate(Shockwave, gameObject.transform.position, Quaternion.identity);
 
 		shockwave.GetComponent<Shockwave>().SetCaster(gameObject);
 		shockwave.GetComponent<Shockwave>().Blast();
