@@ -39,6 +39,14 @@ public class PlayerGrounding : MonoBehaviour
             {
                 rumbler.SetFadingRumbleOverTime(1f, 0.25f, 0.25f);
             }
+            else if (platform.IsShaking)
+            {
+                rumbler.SetRumble(platform.DropTimerPercentageElapsed, platform.DropTimerPercentageElapsed);
+            }
+            else
+            {
+                rumbler.StopRumble();
+            }
         }
     }
 

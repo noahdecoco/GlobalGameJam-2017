@@ -30,6 +30,7 @@ GameObject:
   - component: {fileID: 114242447519328052}
   - component: {fileID: 114359101687580518}
   - component: {fileID: 114850728398348414}
+  - component: {fileID: 114160204121280576}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -92,6 +93,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf951aa34176d49d79cdca7aa91f6afd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114160204121280576
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010132483710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da086046a471f0d4ca07589309619c4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Shockwave: {fileID: 1256165501701760, guid: 69ded0d7db6fb954383552f6e2d3c5db, type: 2}
+  ShockwaveCostInGems: 5
 --- !u!114 &114180791950901916
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -165,11 +179,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
-  useKeyboardControls: 1
-  Shockwave: {fileID: 1256165501701760, guid: 69ded0d7db6fb954383552f6e2d3c5db, type: 2}
-  GamepadIndex: 0
+  useKeyboardControls: 0
   stunTime: 2
   stunPrefab: {fileID: 1082370438361240, guid: 164c7b69962be93408e03687a4831877, type: 2}
+  GamepadIndex: 0
 --- !u!114 &114987857291187668
 MonoBehaviour:
   m_ObjectHideFlags: 1

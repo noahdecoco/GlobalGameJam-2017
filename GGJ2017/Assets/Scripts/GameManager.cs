@@ -38,8 +38,6 @@ public class GameManager : MonoBehaviour
 
         // TODO: Decide how many players are playing.
         StartGame(4);
-
-        initStatsManager();
     }
 
     // Public methods.
@@ -88,14 +86,9 @@ public class GameManager : MonoBehaviour
             ActivePlayersGameObjects[i].PlayerObject = newPlayer;
             ActivePlayersGameObjects[i].CrystalObject = newCrystal;
         }
+
+        statsManager.Initialise();
     }
-
-	private void initStatsManager()
-	{
-		print("init");
-
-		statsManager.Initialise();
-	}
 
     public void EndGame()
     {

@@ -8,18 +8,22 @@ public class Inventory : MonoBehaviour
     private Dictionary<string, int> inventory = new Dictionary<string, int>();
 
 	private PlayerInfo playerInfo;
+
 	private int playerIndex;
 
     // Events.
 	public delegate void GemValueChangedHandler(object sender, int gemValue, int playerIndex);
     public event GemValueChangedHandler GemValueChangedEvent;
 
+    // Unity callbacks.
+    void Start()
+    {
+        inventory["Gem"] = 0;
 
-    void Start() {
-		playerInfo = GetComponent<PlayerInfo>();
+        playerInfo = GetComponent<PlayerInfo>();
+
 		playerIndex = playerInfo.PlayerIndex;
     }
-
 
     // Public methods.
     public int Count(string name)
@@ -33,7 +37,8 @@ public class Inventory : MonoBehaviour
         {
             inventory[name] += amount;
 
-			if(name == "Gem") {
+			if (name == "Gem")
+            {
 				GemValueChangedEvent(this, inventory[name], playerIndex);
 			}
         }
@@ -43,11 +48,16 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void Drop(string name, int amount)
+    public void Remove(string name, int amount)
     {
         if (inventory.ContainsKey(name) && inventory[name] >= amount)
         {
             inventory[name] -= amount;
+
+            if (name == "Gem")
+            {
+                GemValueChangedEvent(this, inventory[name], playerIndex);
+            }
         }
     }
 
