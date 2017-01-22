@@ -20,6 +20,15 @@ public class PlatformManager : MonoBehaviour
         Debug.Log("Found platforms: " + Platforms.Count);
 	}
 
+    // Public methods.
+    public void PerformStartGameAnimation()
+    {
+        foreach (GameObject p in Platforms)
+        {
+            p.GetComponent<Platform>().PerformStartGameAnimation();
+        }
+    }
+
     // Private methods.
     private List<GameObject> FindAllPlatformsRecursively(Transform t)
     {
