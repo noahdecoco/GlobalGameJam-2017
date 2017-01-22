@@ -45,7 +45,7 @@ public class GemSpawner : MonoBehaviour
     }
 
     // Public methods.
-    public void StartGame()
+    public void StartSpawning()
     {
         SpawnGemWave();
     }

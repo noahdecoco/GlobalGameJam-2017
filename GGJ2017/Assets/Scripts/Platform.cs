@@ -54,7 +54,7 @@ public class Platform : MonoBehaviour
         float delay = Random.Range(1.0f, 3.0f);
 
         iTween.MoveFrom(gameObject, iTween.Hash("y", -10, "time", 3, "delay", delay));
-        iTween.FadeFrom(gameObject, iTween.Hash("a", 0, "time", 2, "delay", delay));
+        iTween.FadeFrom(gameObject, iTween.Hash("a", 0, "time", 2, "delay", delay, "includechildren", false));
 
         performedStartGameAnimation = true;
     }

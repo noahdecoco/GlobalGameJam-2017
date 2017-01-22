@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using XInputDotNetPure; // Required in C#
 
 public struct PlayerGameObjects
 {
@@ -25,9 +26,15 @@ public class GameManager : MonoBehaviour
 
     private StatsManager statsManager;
 
+    private PlatformManager platformManager;
+
+    private GemSpawner gemSpawner;
+
     private int activePlayerCount;
 
     private int totalPlayerCount;
+
+    private bool gameStarted = false;
 
     // Unity callbacks.
     void Start()
@@ -36,13 +43,26 @@ public class GameManager : MonoBehaviour
 
 		statsManager = GetComponent<StatsManager>();
 
-        // TODO: Decide how many players are playing.
-        //StartGame(4);
+        platformManager = GetComponent<PlatformManager>();
+
+        gemSpawner = GetComponent<GemSpawner>();
+    }
+
+    void Update()
+    {
+        if (!gameStarted
+            && WaitForStartButton())
+        {
+            // TODO: Decide how many players are playing.
+            StartGame(4);
+        }
     }
 
     // Public methods.
     public void StartGame(int numberOfPlayers)
     {
+        gameStarted = true;
+
         this.activePlayerCount = totalPlayerCount = numberOfPlayers;
 
         GameObject[] spawnPointsToUse =
@@ -87,7 +107,11 @@ public class GameManager : MonoBehaviour
             ActivePlayersGameObjects[i].CrystalObject = newCrystal;
         }
 
+        gemSpawner.StartSpawning();
+
         statsManager.Initialise();
+
+        platformManager.PerformStartGameAnimation();
     }
 
     public void EndGame()
@@ -140,5 +164,22 @@ public class GameManager : MonoBehaviour
         ActivePlayersGameObjects[playerIndex].CrystalObject.SetActive(false);
 
         ActivePlayersGameObjects[playerIndex].PlayerObject.GetComponent<PlayerInfo>().LostGame = true;
+    }
+
+    private bool WaitForStartButton()
+    {
+        for (int i = 0; i < 4; ++i)
+        {
+            PlayerIndex testPlayerIndex = (PlayerIndex)i;
+
+            GamePadState testState = GamePad.GetState(testPlayerIndex);
+
+            if (testState.Buttons.Start == ButtonState.Pressed)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
