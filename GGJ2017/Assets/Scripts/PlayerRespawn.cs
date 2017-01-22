@@ -42,6 +42,7 @@ public class PlayerRespawn : MonoBehaviour
 
             Invoke("Respawn", respawnTime);
             Invoke("MakeBeam", respawnTime / 2f);
+            gameObject.GetComponent<PlayerController>().RemoveStun();
 
             IsRespawning = true;
 
