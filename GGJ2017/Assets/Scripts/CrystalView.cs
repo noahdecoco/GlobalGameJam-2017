@@ -19,7 +19,7 @@ public class CrystalView : MonoBehaviour
 
     private static float crystalLightBaseRange = 5f;
 
-    private static float crystalLightMaxExtraRange = 25f;
+    private static float crystalLightMaxExtraRange = 15f;
 
     private static float crystalBaseScale = 1.908349f;
 
