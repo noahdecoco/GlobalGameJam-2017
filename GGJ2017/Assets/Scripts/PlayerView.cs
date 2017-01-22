@@ -7,6 +7,8 @@ public class PlayerView : MonoBehaviour
     // Public vars.
     public GameObject[] WizardPrefabs = new GameObject[4];
 
+    public GameObject WizardModel;
+
     // Private vars.
     private PlayerInfo playerInfo;
 
@@ -26,9 +28,9 @@ public class PlayerView : MonoBehaviour
 
     private void SetCharacterModel(int playerIndex)
     {
-        GameObject characterObject = GameObject.Instantiate(WizardPrefabs[playerIndex]);
+        WizardModel = GameObject.Instantiate(WizardPrefabs[playerIndex]);
 
-        characterObject.transform.parent = transform;
+        WizardModel.transform.parent = transform;
 
         Debug.Log(gameObject.name + " is " + WizardPrefabs[playerIndex].name);
     }

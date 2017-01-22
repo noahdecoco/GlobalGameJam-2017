@@ -34,6 +34,8 @@ public class PlayerController : MonoBehaviour
 
     private Inventory inventory;
 
+    private PlayerView playerView;
+
     // Stun vars.
     private Animator animator;
 
@@ -58,9 +60,11 @@ public class PlayerController : MonoBehaviour
 
         inventory = GetComponent<Inventory>();
 
+        playerView = GetComponent<PlayerView>();
+
         isStunned = false;
 
-        beamOrigin = transform.FindChild("BeamOrigin").gameObject;
+        //beamOrigin = playerView.WizardModel.transform.FindChild("BeamOrigin").gameObject;
     }
 	
 	void Update ()
