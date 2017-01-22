@@ -145,6 +145,12 @@ public class PlayerController : MonoBehaviour
             {
                 PerformInteraction();
             }
+
+			if (state.Buttons.B == ButtonState.Pressed)
+            {
+				PerformShockwave();
+            }
+			
         }
     }
 
