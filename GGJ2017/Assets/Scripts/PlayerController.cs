@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
 
     // Component reference vars.
     private Interactor interactor;
-    
+
     private Rumbler rumbler;
 
     private Shocker shocker;
@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
     {
         interactor = GetComponent<Interactor>();
 
-		animator = transform.GetChild(0).GetComponent<Animator>();
+        animator = transform.GetChild(0).GetComponent<Animator>();
 
         rumbler = GetComponent<Rumbler>();
 
@@ -66,10 +66,10 @@ public class PlayerController : MonoBehaviour
 
         //beamOrigin = playerView.WizardModel.transform.FindChild("BeamOrigin").gameObject;
     }
-	
-	void Update ()
+
+    void Update ()
     {
-		HandleInput();
+        HandleInput();
 
         if (isStunned == true)
         {
@@ -258,11 +258,11 @@ public class PlayerController : MonoBehaviour
             rumbler.SetFadingRumbleOverTime(1f, 0.25f, 0.25f);
         }
     }
-    
-	private void SetPlayerIdle()
-	{
-		animator.SetTrigger("idle");
-	}
+
+    private void SetPlayerIdle()
+    {
+        animator.SetTrigger("idle");
+    }
 
     public void ActivateStun()
     {
@@ -281,4 +281,4 @@ public class PlayerController : MonoBehaviour
             Destroy(stunInst);
         }
     }
-}	
+}

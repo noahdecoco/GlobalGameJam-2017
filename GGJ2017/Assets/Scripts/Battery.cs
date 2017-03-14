@@ -9,7 +9,7 @@ public class Battery : MonoBehaviour
     public static List<Battery> __global_Batteries = new List<Battery>();
 
     // Events.
-	public delegate void ChargeValueChangedHandler(object sender, float chargeValue, int playerIndex);
+    public delegate void ChargeValueChangedHandler(object sender, float chargeValue, int playerIndex);
     public event ChargeValueChangedHandler ChargeValueChangedEvent;
 
     public delegate void ChargeDrainedHandler(object sender, CrystalInfo crystalInfo);
@@ -30,11 +30,12 @@ public class Battery : MonoBehaviour
     private CrystalInfo crystalInfo;
 
     private float chargeValue = 1f;
-	private int playerIndex;
+    private int playerIndex;
 
-	public float CHING(){
-		return 1f;
-	}
+    public float CHING()
+    {
+        return 1f;
+    }
 
     // Unity callbacks.
     void Start()
@@ -45,10 +46,9 @@ public class Battery : MonoBehaviour
         }
 
         crystalInfo = GetComponent<CrystalInfo>();
-		playerIndex = crystalInfo.PlayerIndex;
-
+        playerIndex = crystalInfo.PlayerIndex;
     }
-    
+
     void OnDestroy()
     {
         if (__global_Batteries.Contains(this))
@@ -70,7 +70,7 @@ public class Battery : MonoBehaviour
         // Don't go over 100%.
         chargeValue = Mathf.Min(chargeValue, 1f);
 
-		ChargeValueChangedEvent(this, chargeValue, playerIndex);
+        ChargeValueChangedEvent(this, chargeValue, playerIndex);
     }
 
     public void Drain(float percentage)
@@ -85,7 +85,7 @@ public class Battery : MonoBehaviour
         // Don't go under 0%.
         chargeValue = Mathf.Max(chargeValue, 0f);
 
-		ChargeValueChangedEvent(this, chargeValue, playerIndex);
+        ChargeValueChangedEvent(this, chargeValue, playerIndex);
 
         if (chargeValue <= 0f)
         {
@@ -116,7 +116,7 @@ public class Battery : MonoBehaviour
             float d = Vector3.Distance(b.transform.position, position);
 
             if (b.gameObject.activeSelf
-                && d < distance 
+                && d < distance
                 && d < shortestDistance)
             {
                 shortestDistance = d;
